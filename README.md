@@ -23,7 +23,7 @@
 
 * * *
 
-## Programación con XML
+## Desarrollo del programario
 
 ### 67\. Desarrollo del programario
 
@@ -54,7 +54,7 @@
 
 * * *
 
-## Ámbitos de aplicación del XML
+## Optimización del programario
 
 ### 69\. Diseño y realización de pruebas de programario
 
