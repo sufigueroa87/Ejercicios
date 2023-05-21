@@ -32,7 +32,6 @@
 ### 68\. Instalación y uso de entornos de desarrollo
 
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0001
-- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/Ej_68_wb_Ejercicio0002)
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos Vivienda", inicialmente activada.
@@ -98,12 +97,280 @@
     - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
 
 <p align="center">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001.jpg">
+</p>
+
+- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/Ej_68_wb_Ejercicio0002)
+  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
+  - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
+    - Superior "Datos Vivienda", inicialmente activada.
+    - "Datos Hipoteca", inicialmente desactivada.
+    - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
+  - <ins>Se introducirán los datos:</ins>
+    - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
+    - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
+    - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
+  - <ins>Cuando se pulsa el botón "Aceptar":</ins>
+    - <ins>Si hay algún error en los datos:</ins>
+      - Se selecciona todo el cuadro de texto que contiene este dato.
+      - Se hace que gane focus.
+      - Se muestra el error en el cuadro de texto largo del final.
+      - No se realiza ninguna acción más.
+      - Todos los datos son obligatorios.
+      - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
+      - Combo "Bonificaciones"
+      - Los campos de texto "Edad Cliente"
+      - "Años Hipoteca"
+      - "Euríbor actual"
+      - Botón "Restablecer"
+      - Botón "CALCULAR"
+      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+  - <ins>En el combo "Bonificaciones" habrá 4 valores posibles:</ins>
+    - funcionario
+    - menor de 35 años
+    - colectivos especiales
+    - ninguno
+    - Solo se podrá seleccionar un valor de "Bonificaciones".
+  - <ins>Seguidamente, el usuario selecciona el combo "Bonificaciones", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
+    - Edad del cliente
+    - De cuantos años quiere la hipoteca
+    - A cuánto está el euríbor actualmente
+  - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
+    - Se comprueba que el valor del campo "Bonificaciones" esté informado con un valor válido (identificado en un párrafo anterior).
+    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
+      - El campo "Bonificaciones" gana focus.
+      - El cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Se comprueba que los años de hipoteca:</ins>
+    - Si es vivienda habitual el máximo será de 30 años.
+    - Si es segunda residencia, el máximo serán 25 años.
+    - La edad del cliente sumada a los años de hipoteca tiene que ser igual o inferior a 75 años.
+    - En caso que no se hayan completado estas condiciones o no se haya informado del dato, el campo "Años hipoteca" gana focus y en el cuadro de texto largo del final se muestra el error correspondiente.
+    - Se comprueba que el euríbor sea un valor válido (numérico, puede ser negativo o positivo y puede tener decimales). En caso que no haya ningún valor o este sea incorrecto, el campo "Euríbor actual" gana focus y el cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Si hay datos de entradas incorrectas, se calculan los datos de salida:</ins>
+    - Funcionario: -1%
+    - Menores de 35 años: -0,5%
+    - Colectivos especiales: -0,75%
+    - Ninguno: no se modifica el interés (-0%)
+  - <ins>Seguidamente, se tendrán en cuenta los precios de las diferentes hipotecas (los descuentos se restarán a estos intereses):</ins>
+    - Ficha sin bonificar -> interés del 2,95%
+    - Ficha bonificada -> interés del 2,55%
+    - Variable sin bonificar -> interés del 1,24% + euríbor
+    - Variable bonificada -> interés del 0,6% + euríbor
+  - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
+    - a=(1-(1 + (interés/12)))^(-años*12) / (interés/12)
+    - mensualidad = (precio vivienda - ahorros) / a
+  - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
+    - Volver a iniciar la configuración de los parámetros del cálculo.
+    - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
+    - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
+
+<p align="center">
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002.jpg"/>
 </p>
 
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0003
+  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de vídeo bajo demanda de una compañía.
+  - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
+    - Superior "Datos Contrato", inicialmente activada.
+    - "Bonificaciones", inicialmente desactivada.
+    - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
+  - <ins>Se introducirán los datos:</ins>
+    - "Paquete contratado" : Se seleccionará uno de los 4 valores posibles:
+      - Básico
+      - Básico + Series y Pelis
+      - Básico + Deportes
+      - Completo
+    - "Duración contrato" : Se introducirá el nombre de meses iniciales que durará el contrato (un tipo de permanencia).
+  - <ins>Cuando se pulsa el botón "Aceptar":</ins>
+    - <ins>Si hay algún error en los datos:</ins>
+      - Se selecciona todo el cuadro de texto que contiene este dato.
+      - Se hace que gane focus.
+      - Se muestra el error en el cuadro de texto largo del final.
+      - No se realiza ninguna acción más.
+      - Todos los datos son obligatorios.
+      - El número de meses de contratación tiene que ser un número entero superior o igual a 1.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Contrato") y se habilita "Productos adicionales contratados" y los buttons "Restablecer" y "CALCULAR". El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+  - <ins>En el combo "Productos adicionales contratados" habrá 4 valores posibles:</ins>
+    - Internet
+    - Internet + Mobile
+    - Mobile
+    - Ninguno
+  - <ins>Seguidamente, el usuario selecciona el combo "Productos adicionales contratados" otros productos que tenga contratados.
+  - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
+    - Se comprueba que el valor del campo "Productos adicionales contratados" esté informado con un valor válido (identificado en un párrafo anterior).
+    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
+      - Los cálculos no se realizarán.
+      - El cuadro de texto que contiene el dato incorrecto gana focus.
+      - El cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Si los datos de entrada son correctos, se calcularán los datos de salida:</ins>
+    - "Importe base":
+      - Primeramente se calculará el precio base, dependiendo del paquete contratado y de la duración del contrato:
+        - básico: 35
+        - básico + series + pelis: 45
+        - básico + deportes: 55
+        - completo: 60
+      - A continuación se aplicará el siguiente factor, en función de la duración del contrato:
+        - entre 1 y 11 meses (incluidos): 1,1
+        - entre 12 y 23 meses (incluidos): 1
+        - 24 o más meses: 0,9
+      - Por lo tanto, el "Importe base" será el valor según el paquete contratado multiplicado por el valor según la duración del contrato. Por ejemplo, un básico + deportes para 24 meses: 55*0,9=49,50 euros.
+    - "Descuento":
+      - Se calculará en función de los "Productos adicionales contratados":
+        - Si tiene contratado internet -> 5%
+        - Si tiene contratado internet + mobile -> 10%
+        - Si tiene contratado mobile -> 5%
+        - Si no tiene nada contratado -> 0%
+      - El descuento será el porcentage correspondiente a los "productos adicionales contratados" aplicado al "importe base". Por ejemplo, el caso anterior supongamos que tenemos contratado también internet i el mobile: el descuento será 49,50 * 5% = 2,48euros (los dos euros se redondean a 2 decimales).
+    - "Importe total":
+      - Corresponderá al valor del precio base menos el descuento.
+  - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
+    - Volver a iniciar la configuración de los parámetros del cálculo.
+    - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
+    - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200003.jpg"/>
+</p>
+
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0004
+  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
+  - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
+    - Superior "Datos Vivienda", inicialmente activada.
+    - "Datos Hipoteca", inicialmente desactivada.
+    - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
+  - <ins>Se introducirán los datos:</ins>
+    - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
+    - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
+    - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
+  - <ins>Cuando se pulsa el botón "Aceptar":</ins>
+    - <ins>Si hay algún error en los datos:</ins>
+      - Se selecciona todo el cuadro de texto que contiene este dato.
+      - Se hace que gane focus.
+      - Se muestra el error en el cuadro de texto largo del final.
+      - No se realiza ninguna acción más.
+      - Todos los datos son obligatorios.
+      - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
+      - Combo "Bonificaciones"
+      - Los campos de texto "Edad Cliente"
+      - "Años Hipoteca"
+      - "Euríbor actual"
+      - Botón "Restablecer"
+      - Botón "CALCULAR"
+      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+  - <ins>En el combo "Bonificaciones" habrá 4 valores posibles:</ins>
+    - funcionario
+    - menor de 35 años
+    - colectivos especiales
+    - ninguno
+    - Solo se podrá seleccionar un valor de "Bonificaciones".
+  - <ins>Seguidamente, el usuario selecciona el combo "Bonificaciones", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
+    - Edad del cliente
+    - De cuantos años quiere la hipoteca
+    - A cuánto está el euríbor actualmente
+  - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
+    - Se comprueba que el valor del campo "Bonificaciones" esté informado con un valor válido (identificado en un párrafo anterior).
+    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
+    - El campo "Bonificaciones" gana focus.
+    - El cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Se comprueba que los años de hipoteca:</ins>
+    - Si es vivienda habitual el máximo será de 30 años.
+    - Si es segunda residencia, el máximo serán 25 años.
+    - La edad del cliente sumada a los años de hipoteca tiene que ser igual o inferior a 75 años.
+    - En caso que no se hayan completado estas condiciones o no se haya informado del dato, el campo "Años hipoteca" gana focus y en el cuadro de texto largo del final se muestra el error correspondiente.
+    - Se comprueba que el euríbor sea un valor válido (numérico, puede ser negativo o positivo y puede tener decimales). En caso que no haya ningún valor o este sea incorrecto, el campo "Euríbor actual" gana focus y el cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Si hay datos de entradas incorrectas, se calculan los datos de salida:</ins>
+    - Funcionario: -1%
+    - Menores de 35 años: -0,5%
+    - Colectivos especiales: -0,75%
+    - Ninguno: no se modifica el interés (-0%)
+  - <ins>Seguidamente, se tendrán en cuenta los precios de las diferentes hipotecas (los descuentos se restarán a estos intereses):</ins>
+    - Ficha sin bonificar -> interés del 2,95%
+    - Ficha bonificada -> interés del 2,55%
+    - Variable sin bonificar -> interés del 1,24% + euríbor
+    - Variable bonificada -> interés del 0,6% + euríbor
+  - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
+    - a=(1-(1 + (interés/12)))^(-años*12) / (interés/12)
+    - mensualidad = (precio vivienda - ahorros) / a
+  - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
+    - Volver a iniciar la configuración de los parámetros del cálculo.
+    - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
+    - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200004.jpg"/>
+</p>
+
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0005
+  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
+  - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
+    - Superior "Datos Vivienda", inicialmente activada.
+    - "Datos Hipoteca", inicialmente desactivada.
+    - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
+  - <ins>Se introducirán los datos:</ins>
+    - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
+    - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
+    - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
+  - <ins>Cuando se pulsa el botón "Aceptar":</ins>
+    - <ins>Si hay algún error en los datos:</ins>
+      - Se selecciona todo el cuadro de texto que contiene este dato.
+      - Se hace que gane focus.
+      - Se muestra el error en el cuadro de texto largo del final.
+      - No se realiza ninguna acción más.
+      - Todos los datos son obligatorios.
+      - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
+      - Combo "Bonificaciones"
+      - Los campos de texto "Edad Cliente"
+      - "Años Hipoteca"
+      - "Euríbor actual"
+      - Botón "Restablecer"
+      - Botón "CALCULAR"
+      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+  - <ins>En el combo "Bonificaciones" habrá 4 valores posibles:</ins>
+    - funcionario
+    - menor de 35 años
+    - colectivos especiales
+    - ninguno
+    - Solo se podrá seleccionar un valor de "Bonificaciones".
+  - <ins>Seguidamente, el usuario selecciona el combo "Bonificaciones", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
+    - Edad del cliente
+    - De cuantos años quiere la hipoteca
+    - A cuánto está el euríbor actualmente
+  - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
+    - Se comprueba que el valor del campo "Bonificaciones" esté informado con un valor válido (identificado en un párrafo anterior).
+    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
+    - El campo "Bonificaciones" gana focus.
+    - El cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Se comprueba que los años de hipoteca:</ins>
+    - Si es vivienda habitual el máximo será de 30 años.
+    - Si es segunda residencia, el máximo serán 25 años.
+    - La edad del cliente sumada a los años de hipoteca tiene que ser igual o inferior a 75 años.
+    - En caso que no se hayan completado estas condiciones o no se haya informado del dato, el campo "Años hipoteca" gana focus y en el cuadro de texto largo del final se muestra el error correspondiente.
+    - Se comprueba que el euríbor sea un valor válido (numérico, puede ser negativo o positivo y puede tener decimales). En caso que no haya ningún valor o este sea incorrecto, el campo "Euríbor actual" gana focus y el cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Si hay datos de entradas incorrectas, se calculan los datos de salida:</ins>
+    - Funcionario: -1%
+    - Menores de 35 años: -0,5%
+    - Colectivos especiales: -0,75%
+    - Ninguno: no se modifica el interés (-0%)
+  - <ins>Seguidamente, se tendrán en cuenta los precios de las diferentes hipotecas (los descuentos se restarán a estos intereses):</ins>
+    - Ficha sin bonificar -> interés del 2,95%
+    - Ficha bonificada -> interés del 2,55%
+    - Variable sin bonificar -> interés del 1,24% + euríbor
+    - Variable bonificada -> interés del 0,6% + euríbor
+  - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
+    - a=(1-(1 + (interés/12)))^(-años*12) / (interés/12)
+    - mensualidad = (precio vivienda - ahorros) / a
+  - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
+    - Volver a iniciar la configuración de los parámetros del cálculo.
+    - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
+    - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200005.jpg"/>
+</p>
+
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0001
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0003
