@@ -234,15 +234,18 @@
 </p>
 
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0004
-  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
+  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de un seguro de coche para un concesionario (solo seguros a todo riesgo).
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
-    - Superior "Datos Vivienda", inicialmente activada.
-    - "Datos Hipoteca", inicialmente desactivada.
+    - Superior "Datos Vehículo", inicialmente activada.
+    - "Bonificaciones", inicialmente desactivada.
     - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
   - <ins>Se introducirán los datos:</ins>
-    - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
-    - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
-    - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
+    - "Caballos" : Se introducirá el número de caballos que tiene el coche. 
+    - "Combustible" : Se seleccionará uno de los 4 valores posibles:
+      - Gasolina
+      - Diesel
+      - Híbrido
+      - Eléctrico
   - <ins>Cuando se pulsa el botón "Aceptar":</ins>
     - <ins>Si hay algún error en los datos:</ins>
       - Se selecciona todo el cuadro de texto que contiene este dato.
@@ -250,49 +253,51 @@
       - Se muestra el error en el cuadro de texto largo del final.
       - No se realiza ninguna acción más.
       - Todos los datos son obligatorios.
-      - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
-    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
-      - Combo "Bonificaciones"
-      - Los campos de texto "Edad Cliente"
-      - "Años Hipoteca"
-      - "Euríbor actual"
-      - Botón "Restablecer"
-      - Botón "CALCULAR"
-      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
-  - <ins>En el combo "Bonificaciones" habrá 4 valores posibles:</ins>
-    - funcionario
-    - menor de 35 años
-    - colectivos especiales
-    - ninguno
-    - Solo se podrá seleccionar un valor de "Bonificaciones".
-  - <ins>Seguidamente, el usuario selecciona el combo "Bonificaciones", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
-    - Edad del cliente
-    - De cuantos años quiere la hipoteca
-    - A cuánto está el euríbor actualmente
+      - El número de caballos tiene que ser superior a 60.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Parámetros") y se habilitan las cajas "Antigüedad carnet" y "Último comunicado de accidente", así como los buttons "Restablecer" y "Calcular". Eñ resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+      - Después, el usuario introduce en la caja "Antigüedad carnet" el bloque correspondiente a los años que hace que tiene el carnet de conducir.
+      - Luego, el usuario introduce en la caja "Último comunicado de accidente" los años que lleva sin presentar ningún comunicado de accidente:
+        - Es necesario que sea un número entero igual o superior a 0.
   - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
-    - Se comprueba que el valor del campo "Bonificaciones" esté informado con un valor válido (identificado en un párrafo anterior).
-    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
-    - El campo "Bonificaciones" gana focus.
-    - El cuadro de texto largo del final muestra el error correspondiente.
-  - <ins>Se comprueba que los años de hipoteca:</ins>
-    - Si es vivienda habitual el máximo será de 30 años.
-    - Si es segunda residencia, el máximo serán 25 años.
-    - La edad del cliente sumada a los años de hipoteca tiene que ser igual o inferior a 75 años.
-    - En caso que no se hayan completado estas condiciones o no se haya informado del dato, el campo "Años hipoteca" gana focus y en el cuadro de texto largo del final se muestra el error correspondiente.
-    - Se comprueba que el euríbor sea un valor válido (numérico, puede ser negativo o positivo y puede tener decimales). En caso que no haya ningún valor o este sea incorrecto, el campo "Euríbor actual" gana focus y el cuadro de texto largo del final muestra el error correspondiente.
-  - <ins>Si hay datos de entradas incorrectas, se calculan los datos de salida:</ins>
-    - Funcionario: -1%
-    - Menores de 35 años: -0,5%
-    - Colectivos especiales: -0,75%
-    - Ninguno: no se modifica el interés (-0%)
-  - <ins>Seguidamente, se tendrán en cuenta los precios de las diferentes hipotecas (los descuentos se restarán a estos intereses):</ins>
-    - Ficha sin bonificar -> interés del 2,95%
-    - Ficha bonificada -> interés del 2,55%
-    - Variable sin bonificar -> interés del 1,24% + euríbor
-    - Variable bonificada -> interés del 0,6% + euríbor
-  - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
-    - a=(1-(1 + (interés/12)))^(-años*12) / (interés/12)
-    - mensualidad = (precio vivienda - ahorros) / a
+    - Se comprueba que el valor del campo "Antigüidad del carnet" y "Último comunicado de accidente" estén informados con un valores válidos (identificado en los dos párrafos anteriores):
+      - En caso que el formato o los valores de los números introducidos en las cajas sean incorrectos:
+        - Los cálculos no se realizarán.
+        - El cuadro de texto que contiene el dato incorrecto gana focus.
+        - En el cuadro final de texto largo se mostrará también el error correspondiente.
+  - <ins>Si los datos introducidos son correctos, se calculan los datos de salida:</ins>
+    - "Precio base":
+      - Primeramente se calculará el precio base, dependiendo de los caballos del coche y el tipo de combustible según los siguientes valores:
+        - menos de 90 caballos: 450
+        - entre 90 y 99 caballos: 510
+        - entre 100 y 109 caballos: 540
+        - entre 110 y 119 caballos: 560
+        - entre 120 y 135 caballos: 580
+        - más de 135 caballos: 600
+        - Gasolina: 1
+        - Diesel: 1,2
+        - Híbrido: 0,9
+        - Eléctrico: 0,8
+      - El importe resultante será el valor según los caballos multiplicado por el valor según el combustible. Por ejemplo, un coche de 110 caballos y diesel: 560*1,2=672.
+    - "Bonificaciones":
+      - Se calculará en función a los "Años de carnet" y a los "Años desde el último comunicado de accidente", según los siguientes valores:
+        - Si el carnet tiene hasta 1 año de antigüedad: 1,2
+        - Si tiene entre 2 y 9 años: 1
+        - Si tiene entre 10 y 19 años: 0,9
+        - Si tiene más de 20 años de antigüedad: 0,8
+        - Si hace menos de un año del último comunicado -> +3,5%
+        - Si hace entre 1 y 2 años: 0%
+        - Si hace entre 3 y 4 años: -5%
+        - Si hace 5 o más años: -15,5%
+      - Al precio base se le aplicará la bonificación de los años de carnet y, sobre el valor obtenido, la de los años desde el último comunicado de accidente y se mostrará el importe resultante. Por ejemplo, continuando con el caso anterior, con 19 años de antigüedad de carnet y 5 años sin ningún accidente (la precisión es de 2 decimales porque se trabaja con euros):
+        - 672*0,9 = 604,80
+        - 604,80 - 15,5% de 604,80 = 511,06
+        - La bonificación sería 672 - 511,06 = 160,94euros
+    - "Precio total":
+      - Corresponderá al valor del precio base menos las bonificaciones.
+      - Lo calcularemos de la manera siguiente:
+        - Para el importe anual, usaremos el precio que hemos calculado (precio base - bonificaciones) y le restaremos un 2%.
+        - Para el importe trimestral, usaremos el precio que hemos calculado (precio base - bonificaciones) y lo dividiremos entre 4.
+        - Para el importe mensual, usaremos el precio que hemos calculado (precio base - bonificaciones) y lo dividiremos entre 12 y le sumaremos el 2%.
   - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
     - Volver a iniciar la configuración de los parámetros del cálculo.
     - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
@@ -300,75 +305,6 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200004.jpg"/>
-</p>
-
-- 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0005
-  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
-  - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
-    - Superior "Datos Vivienda", inicialmente activada.
-    - "Datos Hipoteca", inicialmente desactivada.
-    - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
-  - <ins>Se introducirán los datos:</ins>
-    - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
-    - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
-    - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
-  - <ins>Cuando se pulsa el botón "Aceptar":</ins>
-    - <ins>Si hay algún error en los datos:</ins>
-      - Se selecciona todo el cuadro de texto que contiene este dato.
-      - Se hace que gane focus.
-      - Se muestra el error en el cuadro de texto largo del final.
-      - No se realiza ninguna acción más.
-      - Todos los datos son obligatorios.
-      - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
-    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
-      - Combo "Bonificaciones"
-      - Los campos de texto "Edad Cliente"
-      - "Años Hipoteca"
-      - "Euríbor actual"
-      - Botón "Restablecer"
-      - Botón "CALCULAR"
-      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
-  - <ins>En el combo "Bonificaciones" habrá 4 valores posibles:</ins>
-    - funcionario
-    - menor de 35 años
-    - colectivos especiales
-    - ninguno
-    - Solo se podrá seleccionar un valor de "Bonificaciones".
-  - <ins>Seguidamente, el usuario selecciona el combo "Bonificaciones", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
-    - Edad del cliente
-    - De cuantos años quiere la hipoteca
-    - A cuánto está el euríbor actualmente
-  - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
-    - Se comprueba que el valor del campo "Bonificaciones" esté informado con un valor válido (identificado en un párrafo anterior).
-    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
-    - El campo "Bonificaciones" gana focus.
-    - El cuadro de texto largo del final muestra el error correspondiente.
-  - <ins>Se comprueba que los años de hipoteca:</ins>
-    - Si es vivienda habitual el máximo será de 30 años.
-    - Si es segunda residencia, el máximo serán 25 años.
-    - La edad del cliente sumada a los años de hipoteca tiene que ser igual o inferior a 75 años.
-    - En caso que no se hayan completado estas condiciones o no se haya informado del dato, el campo "Años hipoteca" gana focus y en el cuadro de texto largo del final se muestra el error correspondiente.
-    - Se comprueba que el euríbor sea un valor válido (numérico, puede ser negativo o positivo y puede tener decimales). En caso que no haya ningún valor o este sea incorrecto, el campo "Euríbor actual" gana focus y el cuadro de texto largo del final muestra el error correspondiente.
-  - <ins>Si hay datos de entradas incorrectas, se calculan los datos de salida:</ins>
-    - Funcionario: -1%
-    - Menores de 35 años: -0,5%
-    - Colectivos especiales: -0,75%
-    - Ninguno: no se modifica el interés (-0%)
-  - <ins>Seguidamente, se tendrán en cuenta los precios de las diferentes hipotecas (los descuentos se restarán a estos intereses):</ins>
-    - Ficha sin bonificar -> interés del 2,95%
-    - Ficha bonificada -> interés del 2,55%
-    - Variable sin bonificar -> interés del 1,24% + euríbor
-    - Variable bonificada -> interés del 0,6% + euríbor
-  - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
-    - a=(1-(1 + (interés/12)))^(-años*12) / (interés/12)
-    - mensualidad = (precio vivienda - ahorros) / a
-  - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
-    - Volver a iniciar la configuración de los parámetros del cálculo.
-    - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
-    - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200005.jpg"/>
 </p>
 
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0001
