@@ -32,6 +32,68 @@
 ### 68\. Instalación y uso de entornos de desarrollo
 
 - [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001)
+  - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo de un seguro.
+  - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
+    - Superior "Datos cliente", inicialmente activada.
+    - "Datos seguro", inicialmente desactivada.
+    - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
+  - <ins>Se introducirán los datos:</ins>
+    - "Año nacimiento" : Se introducirá el año en que nació el futuro asegurado.
+    - "Fumador/a habitual" : Se seleccionará sí o no.
+    - "Profesión de riesgo" : Se seleccionará uno de los 3 valores posibles:
+      - Riesgo bajo
+      - Riesgo moderado
+      - Riesgo alto
+  - <ins>Cuando se pulsa el botón "Aceptar":</ins>
+    - <ins>Si hay algún error en los datos:</ins>
+      - Se selecciona todo el cuadro de texto o combo que contiene este dato.
+      - Se hace que gane focus.
+      - Se muestra el error en el cuadro de texto largo del final.
+      - No se realiza ninguna acción más.
+      - Todos los datos son obligatorios.
+      - Se tiene que cumplir que el asegurado tenga como mínimo 18 años y como máximo 70.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos cliente") y se habilita la sección "Datos seguro": esta incluye:
+      - Cuadro de texto "Cantidad a asegurar"
+      - Combo "Tipo": Tendrá 3 posibles valores:
+        - Muerte o invalidez
+        - Muerte o invalidez por accidente
+        - Muerte o invalidez o enfermedad grave
+      - Button "Restablecer" 
+      - Button "Calcular"
+      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+  - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
+    - Se comprueba que el valor del campo "Tipos" esté informado con un valor válido (identificado en un párrafo anterior).
+    - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
+      - El campo "Tipos" gana focus.
+      - El cuadro de texto largo del final muestra el error correspondiente.
+  - <ins>Se comprueba que la cantidad a asegurar tenga un mínimo de 50000 euros:</ins>
+    - Si no se cumple esta condición o no se ha informado del dato, el campo "Cantidad a asegurar":
+      - Gana focus.
+      - Se muestra el error correspondiente en el recuadro de las alertas.
+  - <ins>Si los datos son correctos,</ins> se calculan los datos de salida (el método para calcular las cuotas de seguro de vida son inventados):
+    - Primero se tiene en cuenta la edad del asegurado:
+      - Si tiene entre 18 y 40 años -> factor del 0,9
+      - Si tiene entre 41 y 55 años -> factor del 1
+      - Si tiene más de 55 años -> factor del 1,1
+    - Seguidamente se tendrá en cuenta si el asegurado es fumador/a habitual:
+      - Sí -> factor del 1,1
+      - No -> factor del 0,9
+    - En tercer lugar se valorará si tiene una profesión de riesgo o no:
+      - Riesgo bajo -> factor del 0,95
+      - Riesgo moderado -> factor del 1,05
+      - Riesgo alto -> factor del 1,5
+    - Por último, se tendrá en cuenta el tipo de seguro que se desea:
+      - Muerte o invalidez -> factor del 1
+      - Muerte o invalidez por accidente -> factor del 1,5
+      - Muerte o invalidez o enfermedad grave -> factor del 1,1
+    - Para calcular el valor de los pagos usaremos la fórmula:
+      - anualidad = (Cantidad * Factor edad * Factor fumador * Factor profesión * Factor tipo seguro)/((70-Edad)*10)
+      - semestralidad = (anualidad/2)*1,5
+      - mensualidad = (anualidad/12)*1,10
+  - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
+    - Volver a iniciar la configuración de los parámetros del cálculo.
+    - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
+    - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
 <p align="center">
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001.jpg">
 </p>
