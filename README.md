@@ -32,10 +32,7 @@
 ### 68\. Instalación y uso de entornos de desarrollo
 
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0001
-- 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002
-
-
-
+- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/Ej_68_wb_Ejercicio0002)
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos Vivienda", inicialmente activada.
