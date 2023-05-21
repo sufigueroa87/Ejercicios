@@ -40,26 +40,26 @@
     - "Datos Hipoteca", inicialmente desactivada.
     - Inferior "Alertas", que contendrá un campo de tipo texto, que servirá para notificar por pantalla los errores que se produzcan en las validaciones de los campos de entrada. El contenido de este campo tiene que irse actualizando o borrando dependiendo de si queremos o no informar de algún error en aquel momento.
   - <ins>Funcionamiento:</ins>
-   - <ins>Se introducirán los datos:</ins>
-    - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
-    - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
-    - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
+    - <ins>Se introducirán los datos:</ins>
+      - "Precio vivienda" : el precio sin impuestos del piso / casa / etc.
+      - "Ahorros aportados" : se escribirá la cantidad que ya tienen ahorrada los compradores.
+      - "Tipo residencia" : se seleccionará uno de los 2 valores posibles : vivienda habitual o segunda residencia.
   - <ins>Cuando se pulsa el botón "Aceptar":</ins>
-   - Si hay algún error en los datos:
-    - Se selecciona todo el cuadro de texto que contiene este dato.
-    - Se hace que gane focus.
-    - Se muestra el error en el cuadro de texto largo del final.
-    - No se realiza ninguna acción más.
-    - Todos los datos son obligatorios.
-    - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
-    - En caso contrario, cuando la validación sea correcta, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
-     - Combo "Bonificaciones"
-     - Los campos de texto "Edad Cliente"
-     - "Años Hipoteca"
-     - "Euríbor actual"
-     - Botón "Restablecer"
-     - Botón "CALCULAR"
-     - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
+    - <ins>Si hay algún error en los datos:</ins>
+      - Se selecciona todo el cuadro de texto que contiene este dato.
+      - Se hace que gane focus.
+      - Se muestra el error en el cuadro de texto largo del final.
+      - No se realiza ninguna acción más.
+      - Todos los datos son obligatorios.
+      - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
+    - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
+      - Combo "Bonificaciones"
+      - Los campos de texto "Edad Cliente"
+      - "Años Hipoteca"
+      - "Euríbor actual"
+      - Botón "Restablecer"
+      - Botón "CALCULAR"
+      - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
      - En el combo "Bonificaciones" habrá 4 valores posibles:
       - funcionario
       - menor de 35 años
