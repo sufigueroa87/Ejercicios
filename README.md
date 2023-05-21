@@ -33,6 +33,9 @@
 
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0001
 - 68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002
+
+
+
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos Vivienda", inicialmente activada.
@@ -90,7 +93,7 @@
     - Variable sin bonificar -> interés del 1,24% + euríbor
     - Variable bonificada -> interés del 0,6% + euríbor
   - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
-    - a=(1-(interés/12))^(años*12) / (interés/12)
+    - a=(1-(1 + (interés/12)))^(-años*12) / (interés/12)
     - mensualidad = (precio vivienda - ahorros) / a
   - <ins>Si el usuario pulsa el botón "Restablecer", se podrá:</ins>
     - Volver a iniciar la configuración de los parámetros del cálculo.
