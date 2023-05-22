@@ -6,16 +6,16 @@
 
 ### 65\. Aplicaciones con BD no orientadas a objetos
 
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0001
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0002
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0003
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0004
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0005
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0006
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0007
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0008
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0009
-- 65\. Persistencia · Netbeans 12.5 + JDBC + Java 11JDK + Apache Derby 10.14.2.0 · Ejercicio 0010
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0001
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0002
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0003
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0004
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0005
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0006
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0007
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0008
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0009
+- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0010
 
 ### 66\. Aplicaciones con BD orientadas a objetos
 
@@ -117,27 +117,27 @@
       - Todos los datos son obligatorios.
       - Los ahorros aportados tienen que ser del 20% del precio del habitáculo como mínimo.
     - <ins>En caso contrario, cuando la validación sea correcta</ins>, se deshabilitan todos los campos y botones de la parte superior (sección / bloque "Datos Vivienda") y se habilita la sección "Datos Hipoteca": esta incluye:
-      - Combo "Bonificaciones"
+      - Combo "Descuento"
       - Los campos de texto "Edad Cliente"
       - "Años Hipoteca"
       - "Euríbor actual"
       - Botón "Restablecer"
       - Botón "CALCULAR"
       - El resto de cajas de este bloque no son editables, servirán para mostrar los resultados de los cálculos.
-  - <ins>En el combo "Bonificaciones" habrá 4 valores posibles:</ins>
+  - <ins>En el combo "Descuento" habrá 4 valores posibles:</ins>
     - funcionario
     - menor de 35 años
     - colectivos especiales
     - ninguno
-    - Solo se podrá seleccionar un valor de "Bonificaciones".
-  - <ins>Seguidamente, el usuario selecciona el combo "Bonificaciones", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
+    - Solo se podrá seleccionar un valor de "Descuento".
+  - <ins>Seguidamente, el usuario selecciona el combo "Descuento", si puede recibir alguna, e introduce los datos requeridos al resto de campos:</ins>
     - Edad del cliente
     - De cuantos años quiere la hipoteca
     - A cuánto está el euríbor actualmente
   - <ins>Cuando se pulsa el botón "CALCULAR":</ins>
-    - Se comprueba que el valor del campo "Bonificaciones" esté informado con un valor válido (identificado en un párrafo anterior).
+    - Se comprueba que el valor del campo "Descuento" esté informado con un valor válido (identificado en un párrafo anterior).
     - En caso que no se haya seleccionado nada en el combo o el dato sea incorrecto:
-      - El campo "Bonificaciones" gana focus.
+      - El campo "Descuento" gana focus.
       - El cuadro de texto largo del final muestra el error correspondiente.
   - <ins>Se comprueba que los años de hipoteca:</ins>
     - Si es vivienda habitual el máximo será de 30 años.
