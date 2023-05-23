@@ -362,6 +362,9 @@
   - Utiliza el entorno de desarrollo Eclipse para trabajar con una aplicación cliente-servidor, haciendo uso de un servlet.
   - Usaremos el servidor de aplicaciones Apache Tomcat para realizar una aplicación servlet que:
     - Llame a un servlet a través de un formulario HTML, que permite introducir los datos personales de una persona.
+    - El servlet captura los datos introducidor en el formulario, que viajan por el servidor.
+    - El mismo servlet se encarga de devolver una respuesta HTML, que consiste en una tabla con los datos introducidos por el usuario.
+    - Esto permite al usuario validar que los datos que ha introducido son correctos, antes de pasar a otras gestiones, cosa que confirma la comunicación entre el cliente y el servidor.
 
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0003
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0004
