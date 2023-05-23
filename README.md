@@ -309,7 +309,7 @@
   - Utiliza el entorno de desarrollo Eclipse para trabajar con una aplicación cliente-servidor, haciendo uso de un servlet.
   - Apache Tomcat es un servidor web que admite programario Java, por ejemplo, admite la ejecución de servlets.
   - Usaremos el servidor de aplicaciones Apache Tomcat para realizar una aplicación servlet que:
-    - Llame a un servlet a través de un formulario HTML, que permite introducir los datos que identifican a una persona.
+    - Llame a un servlet a través de un formulario HTML, que permite introducir el menú a elegir de una cena de cumpleaños y los comensales que asistirán.
     - El servlet captura los datos introducidor en el formulario, que viajan por el servidor.
     - El mismo servlet se encarga de devolver una respuesta HTML, que consiste en una tabla con los datos introducidos por el usuario.
     - Esto permite al usuario validar que los datos que ha introducido son correctos, antes de pasar a otras gestiones, cosa que confirma la comunicación entre el cliente y el servidor.
@@ -359,6 +359,10 @@
       - Botón derecho encima del archivo html -> Run As -> 1 Run on Server -> Seleccionar el servidor 
         
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002
+  - Utiliza el entorno de desarrollo Eclipse para trabajar con una aplicación cliente-servidor, haciendo uso de un servlet.
+  - Usaremos el servidor de aplicaciones Apache Tomcat para realizar una aplicación servlet que:
+    - Llame a un servlet a través de un formulario HTML, que permite introducir los datos personales de una persona.
+
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0003
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0004
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0005
