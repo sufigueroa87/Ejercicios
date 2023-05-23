@@ -358,7 +358,7 @@
     - Ejecución del servlet:
       - Botón derecho encima del archivo html -> Run As -> 1 Run on Server -> Seleccionar el servidor 
         
-- 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002
+- [68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Servlet%20Apache%20Tomcat%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002)
   - Utiliza el entorno de desarrollo Eclipse para trabajar con una aplicación cliente-servidor, haciendo uso de un servlet.
   - Usaremos el servidor de aplicaciones Apache Tomcat para realizar una aplicación servlet que:
     - Llame a un servlet a través de un formulario HTML, que permite introducir los datos personales de una persona.
