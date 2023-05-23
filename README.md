@@ -144,15 +144,15 @@
     - Si es segunda residencia, el máximo serán 25 años.
     - La edad del cliente sumada a los años de hipoteca tiene que ser igual o inferior a 75 años.
     - En caso que no se hayan completado estas condiciones o no se haya informado del dato, el campo "Años hipoteca" gana focus y en el cuadro de texto largo del final se muestra el error correspondiente.
-    - Se comprueba que el euríbor sea un valor válido (numérico, puede ser negativo o positivo y puede tener decimales). En caso que no haya ningún valor o este sea incorrecto, el campo "Euríbor actual" gana focus y el cuadro de texto largo del final muestra el error correspondiente.
-  - <ins>Si hay datos de entradas incorrectas, se calculan los datos de salida:</ins>
+    - Se comprueba que el euríbor sea un valor válido.
+  - <ins>Se calculan los datos de salida:</ins>
     - Funcionario: -1%
     - Menores de 35 años: -0,5%
     - Colectivos especiales: -0,75%
     - Ninguno: no se modifica el interés (-0%)
   - <ins>Seguidamente, se tendrán en cuenta los precios de las diferentes hipotecas (los descuentos se restarán a estos intereses):</ins>
-    - Ficha sin bonificar -> interés del 2,95%
-    - Ficha bonificada -> interés del 2,55%
+    - Fijo sin bonificar -> interés del 2,95%
+    - Fijo bonificada -> interés del 2,55%
     - Variable sin bonificar -> interés del 1,24% + euríbor
     - Variable bonificada -> interés del 0,6% + euríbor
   - <ins>Para calcular el valor de cada mensualidad, usaremos la fórmula:</ins>
