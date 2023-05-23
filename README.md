@@ -306,6 +306,58 @@
 </p>
 
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0001
+  - Utiliza el entorno de desarrollo Eclipse para trabajar con una aplicación cliente-servidor, haciendo uso de un servlet.
+  - Apache Tomcat es un servidor web que admite programario Java, por ejemplo, admite la ejecución de servlets.
+  - Usaremos el servidor de aplicaciones Apache Tomcat para realizar una aplicación servlet que:
+    - Llame a un servlet a través de un formulario HTML, que permite introducir los datos que identifican a una persona.
+    - El servlet captura los datos introducidor en el formulario, que viajan por el servidor.
+    - El mismo servlet se encarga de devolver una respuesta HTML, que consiste en una tabla con los datos introducidos por el usuario.
+    - Esto permite al usuario validar que los datos que ha introducido son correctos, antes de pasar a otras gestiones, cosa que confirma la comunicación entre el cliente y el servidor.
+    - A tener en cuenta:
+      - 1. Tiene que estar instalado y configurado el servidor Tomcat: Primero descargamos el tomcat:
+        - Ir a la página tomcat.apache.org y descargar la última versión de Tomcat (tar.gz). Descomprimir el archivo descargado.
+      - 2. Configurar Eclipse para que trabaje con la instalación de Tomcat: Abrimos Eclipse:
+        - Vamos a la pestaña de Servers.
+        - Clicamos en: "No servers are available. Click this link to create a new server..."
+        - Select the server type: Buscamos el servidor Tomcat que nos hemos descargado anteriormente y lo seleccionamos.
+      	- Server's host name: localhost
+      	- Server name: El nombre del servidor que nos hemos descargado, al seleccionarlo anteriormente se rellena automáticamente.
+      	- Clicamos en: Next.
+      	- Name: El nombre del servidor que nos hemos descargado. Por ejemplo "Apache Tomcat v10.1"
+      	- Tomcat installation directory: En Browse buscamos donde tenemos el servidor que nos hemos descargado anteriormente.
+      	- Finish.
+      - 3. Para poner en marcha el servidor, botón derecho encima del servidor en la pestaña Servers -> Start.
+      - 4. Crear una aplicación que trabaje con el servlet:
+        - File -> New -> Dynamic Web Project
+        - Project name: Nombre del proyecto.
+        - Target runtime: Debería salir el servidor que hemos instalado anteriormente.
+        - Dynamic web module version: Elegimos la versión 5.0.
+        - Next.
+        - Next.
+        - MUY IMPORTANTE: La opción "Generate web.xml deployment descriptor" tiene que estar elegida.
+        - Al finalizar, se habrá creado el nuevo proyecto para poder usar el servlet.
+      - 5. Dentro del directorio src -> main -> webapp -> WEB-INF: Debería haberse creado el archivo web.xml.
+      - 6. Ahora crearemos la página HTML:
+        - Botón derecho encima del proyecto -> New -> New HTML File: Le damos el nombre de FormularioEntrada.html
+      - 7. Creación del servlet:
+        - Botón derecho encima del proyecto -> New -> Servlet
+        - Class name: Necesitamos poner el nombre de la clase que implementa el servlet.
+        - Java package: Necesitamos poner el nombre del paquete que contendrá la clase que implementa el servlet.
+      - 8. Edición del fichero XML.
+    - Datos importantes:
+      - servlet-class: indica el nombre del Servlet (incluyendo el paquete donde se encuentra)
+      - url-pattern: dirección web sobre la cual se mapeará. Tiene que coincidir con la indicada en el formulario .html (línea <form method="post" action= "./ServletFormulariEntrada">).
+      - welcome-file-list: Lista de los "ficheros de bienvenida" (welcome-file). Estos ficheros son los que se ejecutan cuando solo se pone el nombre del sitio web, pero no el del fichero que queremos ejecutar. 
+      - Mirar las bibliotecas (Libraries):
+        - Botón derecho encima del proyecto -> Properties -> Java Build Path -> Libraries.
+        - Tienen que ser:
+          - JRE System Library[JavaSE-17]
+          - EAR Libraries
+          - Server Runtime[Apache Tomcat v10.1](o de la versión de Tomcat)
+          - Web App Libraries
+    - Ejecución del servlet:
+      - Botón derecho encima del archivo html -> Run As -> 1 Run on Server -> Seleccionar el servidor 
+        
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0003
 - 68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0004
@@ -346,24 +398,377 @@
 ### 70\. Herramientas para el control y documentación del programario / Control de versiones
 
 - 70\. Refacción · Ejercicio 0001
+  - Reescribe la clase EAC3 para mejorar su método preuAmbDescompte, aplicando técnicas de refacción.
+  - El método recibe un precio y devuelve el resultado de aplicarle distintos descuentos.
+  - Concretamente:
+    - a) Si el precio es negativo, lanza una excepción del tipo PreuException y acaba la ejecución.
+    - b) Siempre aplica un 10% de descuento.
+    - c) Si el precio está entre 5000 y 10000, los dos incluídos, aplica un 5% al resultado de haber aplicado el descuento indicado en el punto b.
+    - d) Si el precio es superior a 10000, aplica un 10% al resultado de habet aplicado el descuento indicado en el punto b.
+  ```Java
+  	package eac3;
+	
+	public class EAC3 {
+		public static float preuAmbDescompte(float preu) throws PreuException{
+			float resultat;
+
+			if(preu <0) throw new PreuException();
+			
+			resultat = preu - preu * 10 / 100; // descomptem el 10% al preu
+			
+			if(preu >= 5000 && preu <= 10000){ // entre 500 i 1000, tots dos inclosos
+			
+				resultat = preu - preu * 10 / 100; // descomptem el 10% al preu
+				resultat = resultat - resultat * 5 / 100; // descomptem el 5% al resultat
+			
+			} else if (preu > 10000) { // per sobre de 10000
+				resultat = preu - preu * 10 / 100; // descomptem el 10% al preu
+				resultat = resultat - resultat * 10 / 100; // descomptem el 10% al descompte
+			}
+			return resultat;
+		}
+	}
+  ```
+  ```Java
+	package eac3;
+
+	public class PreuException extends Exception{
+		public PreuException() {
+		super("Preu negatiu");
+		}
+	}
+  ```
 - 70\. Refacción · Ejercicio 0002
+  - Reescribe el método souAmbEstadis para mejorarlo aplicando técnicas de refacción.
+  - El método recibe una antigüedad y devuelve el resultado de aplicarle distintos aumentos de sueldo. Concretamente:
+    - a) Si la antigüedad es inferior a 9 años, devuelve -1 y se acaba la ejecución.
+    - b) Siempre aplica un 1% de aumento de sueldo.
+    - c) Si la antigüedad es entre 15 y 20 años, se aplica un nuevo aumento de sueldo del 2% al resultado de haber aplicado el aumento indicado en el punto b.
+    - d) Si la antigüedad es entre 21 y 26 años, se aplica un nuevo aumento de sueldo del 5% al resultado de haber aplicado el aumento indicado en el punto b.
+    - e) Si la antigüedad es superior a 26 años, aplica un 8% al resultado de haber aplicado el aumento indicado en el punto b.
+```Java
+	package eac3;
+	
+	public class EAC3 {
+		public static double souAmbEstadis (int antiguitat){
+			double sou=0;
+			double souBase=1400;
+
+		if (antiguitat<9) {
+			return -1;
+		} if (antiguitat >=9 && antiguitat <=14) {
+			sou=souBase+souBase*1/100;
+		} if (antiguitat >=15 && antiguitat <=20) {
+			sou=souBase+souBase*1/100;
+			sou=sou+sou*2/100;
+		} if (antiguitat >=21 && antiguitat <=26) {
+			sou=souBase+souBase*1/100;
+			sou=sou+sou*5/100;
+		} else if (antiguitat>26) {
+			sou=souBase+souBase*1/100;
+			sou=sou+sou*8/100;
+		}
+			return sou;
+		}
+	}
+```
 - 70\. Refacción · Ejercicio 0003
+  - Reescribe la clase siguiente para mejorar el método resumIva de la clase ExRefaccio aplicando las refacciones que consideres.
+  - El método calcula el IVA soportad, el IVA repercutido y el resultado de IVA a partir de los importes de compras y ventas.
+```Java
+	package eac3;
+	public class ExRefaccio{
+		public static void resumIva (float importCompres, float importVendes) {
+			System.out.printf("IVA suportat: %.2f\n", importCompres*0.21f);
+			System.out.printf("IVA repercutit: %.2f\n", importVendes*0.21f);
+			System.out.printf("Resultat IVA: %.2f\n",
+			(importVendes* 0.21f - importCompres*0.21f));
+		}
+	}
+```
 - 70\. Refacción · Ejercicio 0004
+  - Reescribe la clase siguiente para mejorar el método calculaImportFactura de la clase Lloguer.
+```Java
+	package refaccio;
+
+	public class Factura {
+		// Área per definir variables globals
+		
+		/*
+		 * Aquest mètode s'encarrega de calcular l'import total de la factura amb IVA inclòs
+		 * També imprimeix informació relativa al nombre de productes i serveis
+		 * @param nroMinutsTarifa1
+		 * @param nroMinutsTarifa2
+		 * @param nroMinutsTarifa3
+		 * @return importTotal
+		 */
+		public static Double calculaImportFactura(int nroMinutsTarifa1, int nroMinutsTarifa2, 
+	int nroMinutsTarifa3) {
+			Double importTarifa1 = 0.00;
+			Double importTarifa2 = 0.00;
+			Double importTarifa3 = 0.00;
+			Double importTotal = 0.00;
+			Double importTotalIVA = 0.00;
+			
+			importTarifa1 = nroMinutsTarifa1 * 0.03;
+			System.out.println("El númreo de minuts de tarifa 1 és :"+nroMinutsTarifa1);
+			System.out.println("El preu total per a tarifa 1 (sense IVA) és :"+importTarifa1+"€");
+			
+			importTarifa2 = nroMinutsTarifa2 * 0.06;
+			System.out.println("El númreo de minuts de tarifa 2 és :"+nroMinutsTarifa2);
+			System.out.println("El preu total per a tarifa 2 (sense IVA) és :"+importTarifa2+"€");
+			
+			importTarifa3 = nroMinutsTarifa3 * 0.10;
+			System.out.println("El númreo de minuts de tarifa 3 és :"+nroMinutsTarifa3);
+			System.out.println("El preu total per a tarifa 3 (sense IVA) és :"+importTarifa3+"€");
+			
+			importTotal = nroMinutsTarifa1 * 0.03 + nroMinutsTarifa1 * 0.06 + nroMinutsTarifa1 * 0.10;
+			System.out.println("El preu total (sense IVA) és :"+importTotal+"€");
+			importTotalIVA = importTotal + importTotal/100*21;
+			System.out.println("El preu total (amb IVA) és :"+importTotalIVA+"€");
+			return importTotalIVA;
+		}
+		
+		// ...... altres mètodes de la classe
+		
+	} // fi de la classe
+```
+```Java
+	// Fitxer Prova.java
+
+	package refaccio;
+
+	public class Prova {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Factura factura = new Factura();
+		System.out.println ("Total: " + Factura.calculaImportFactura(100,50,25));
+	}
+}
+```
 - 70\. Refacción · Ejercicio 0005
+  - Reescribe la clase siguiente para mejorar el método calculaImportLloguer de la clase Lloguer.
+```Java
+	// Fitxer Lloguer.java
+	package refaccio;
+	public class Lloguer {
+		// Área per definir variables globals
+		/*
+		* Aquest mètode s'encarrega de calcular l'import total del lloguer amb IVA
+		inclòs
+		* També imprimeix informació relativa al nombre de productes de cada tipus i
+		subtotal individual sense IVA
+		* @param nroProductesTipus1
+		* @param nroProductesTipus2
+		* @param nroProductesTipus3
+		* @return importTotal
+		*/
+		public static Double calculaImportLloguer(int nroProductesTipus1, int
+		nroProductesTipus2, int nroProductesTipus3) {
+			Double importTipus1 = 0.00;
+			Double importTipus2 = 0.00;
+			Double importTipus3 = 0.00;
+			Double importTotal = 0.00;
+			importTipus1 = nroProductesTipus1 * 2.00;
+			System.out.println ("El númreo de productes de tipus 1 és :"+nroProductesTipus1);
+			System.out.println ("El preu total per a productes de tipus 1 (sense IVA) és :"+importTipus1+"€");
+			importTipus1 = importTipus1 + importTipus1/100*21;
+			importTipus2 = nroProductesTipus2 * 2.50;
+			System.out.println ("El númreo de productes de tipus 2 és :"+nroProductesTipus2);
+			System.out.println ("El preu total per a productes de tipus 2 (sense IVA) és :"+importTipus2+"€");
+			importTipus2 = importTipus2 + importTipus2/100*21;
+			importTipus3 = nroProductesTipus3 * 3.00;
+			System.out.println ("El númreo de productes de tipus 3 és :"+nroProductesTipus3);
+			System.out.println ("El preu total per a productes de tipus 3 (sense IVA) és :"+importTipus3+"€");
+			importTipus3 = importTipus3 + importTipus3/100*21;
+			importTotal = importTipus1+importTipus2+importTipus3;
+			return importTotal;
+		}
+	// ...... altres mètodes de la classe
+	} // fi de la classe
+```
+```Java
+	// Fitxer Prova.java
+	package refaccio;
+	public class Prova {
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			Lloguer lloguer = new Lloguer();
+			System.out.println ("Total: " + Lloguer.calculaImportLloguer(1,2,3));
+		}
+	}
+```
 - 70\. Refacción · Ejercicio 0006
-- 70\. Refacción · Ejercicio 0007
-- 70\. Refacción · Ejercicio 0008
-- 70\. Refacción · Ejercicio 0009
-- 70\. Refacción · Ejercicio 0010
+
 - 70\. Git · Ejercicio 0001
+  - 1. Clona el repositorio público https://github.com/ioc-dam-m05/EAC3.git.
+  - 2. Sitúate en la carpeta EAC3 que se acaba de crear.
+  - 3. Muestra todas las ramas por pantalla. Utiliza la opción -a del orden para que aparezcan todas las ramas remotas.
+  - 4. Sitúate en la rama branca1.
+  - 5. Sitúate en la rama branca2.
+  - 6. Muestra todas las ramas.
+  - 7. Muestra las diferencias entre la rama actual (branca2) y la branca1.
+  - 8. Fusiona la rama actual (branca2) y la branca1.
+  - 9. Qué ha sucedido?
+  - 10. Engancha el contenido de la clase vehicles.Avio de la rama master.
 - 70\. Git · Ejercicio 0002
+  - 1. Inicializa un nuevo proyecto con Git llamado EAC3.
+  - 2. Copia la clase Gos.java:
+  ```Java
+	package Mamifers;
+	public class Gos {
+		String raca;
+		String origen;
+	
+		public void setRaca (String raca){
+		this.raca=raca;
+		}
+	
+		public String getRaca(){
+			return raca;
+		}
+		
+		public void setOrigen (String origen){
+			this.origen=origen;
+		}
+		
+		public String getOrigen(){
+			return origen;
+		}
+	}
+  ```
+  - 3. Añade el fichero al control de versiones.
+  - 4. Ejecuta la orden necesaria para que Git muestre los cambios pendientes de confirmar (juntamente con otra información).
+  - 5. Confirma los cambios poniento "versión inicial - v1" como mensaje.
+  - 6. Crea una nueva rama llamada branca1.
+  - 7. Muestra el listado de ramas que hay y di en cuál estás situada.
+  - 8. Sitúate en la nueva rama que has creado.
+  - 9. Edita o crea el archivo Gos.java para que quede así:
+```Java
+	package Mamifers;
+	public class Gos {
+		String raca;
+		int camadaMitjana;
+		
+		public void setRaca (String raca){
+			this.raca=raca;
+		}
+		
+		public String getRaca(){
+			return raca;
+		}
+		
+		public void setCamadaMitjana (String CamadaMitjana){
+			this.camadaMitjana=camadaMitjana;
+		}
+		
+		public int getCamadaMitjana(){
+			return camadaMitjana;
+		}
+	}
+```
+  - 10. Sube los cambios al repositorio.
+  - 11. Crea una nueva rama llamada branca2.
+  - 12. Sitúate en la nueva rama que has creado.
+  - 13. Edita o crea el archivo Gos.java para que quede así:
+```Java
+	package Mamifers;
+	public class Gos {
+		String raca;
+		float pes;
+		
+		public void setRaca (String raca){
+			this.raca=raca;
+		}
+		
+		public String getRaca(){
+			return raca;
+		}
+		
+		public void setPes (String pes){
+			this.pes=pes;
+		}
+		
+		public int getPes(){
+			return pes;
+		}
+	}
+```
+  - 14. Sube los cambios al repositorio.
+  - 15. Muestra las diferencias entre la branca1 y la branca2.
+  - 16. Fusiona la branca1 y la branca2.
 - 70\. Git · Ejercicio 0003
+  - 1. En tu carpeta de trabajo, crea la carpeta src y dentro una subcarpeta llamada aeronaus. En esta subcarpeta, crea el fichero .java con el código siguiente:
+```Java
+	package aeronaus;
+
+	public class Aeronau {
+		private String nom;
+		private int costHoraVol;
+
+		public String getNom() {
+			return nom;
+		}
+	
+		public void setNom(String nom) {
+			this.nom= nom;
+		}
+		
+		public int getCostHoraVol() {
+			return costHoraVol;
+		}
+	
+		public void setCostHoraVol(int costHoraVol) {
+			this.costHoraVol= costHoraVol;
+		}
+	}
+```
+  - 2. Haz que Git considere la carpeta src como repositorio local. Sitúate y ejecuta el orden git init.
+  - 3. Ejecuta el orden ls -a <fichero> si trabajas con GNU linux o ls - Hidden <fichero> con PowerShell si trabajas con Windows. Copia la ejecución de esta orden y de la anterior con el resultado.
+  - 4. Configura tu nombre y correo en Git con las órdenes:
+    - git config --global user.name "nombre"
+    - git config --global user.email "correo"
+  - 5. Añade todos los ficheros que cuelgan de la carpeta src al control de versiones.
+  - 6. Ejecuta la orden necesaria para que Git muestre los cambios pendientes de confirmar (juntamente con otra información).
+  - 7. Confirma los cambios poniendo "version inicial" como mensaje.
+  - 8. Crea en la carpeta aeronaus el fichero AvioPassatgers.java con el siguiente contenido:
+```Java
+	package aeronaus;
+		public class AvioPassatgers extends Aeronau {
+			private int passatgers;
+			public int getPassatgers() { return passatgers; }
+		public void setPassatgers(int passatgers) { 
+			this.passatgers= passatgers; 
+		}
+	}
+```
+  - 9. Modifica el fichero Aeronau.java añadiendo la palabra reservada final delante del único parámetro del método setNom.
+```Java
+	public void setNom(final String nom) {
+		this.nom= nom;
+} 
+```
+  - 9. Ejecuta la orden necesaria para que Git muestre los cambios pendientes de confirmar.
+  - 10. Añade nuevamente todos los ficheros al control de versiones (con la orden git add).
+  - 11. Confirma los cambios poniendo "segunda versión" como mensaje.
+  - 12. Crea una rama llamada rama1.
+  - 13. Muestra el listado de ramas con la comanda git branch.
+  - 14. Haz que la rama activa sea la rama que acabas de crear, la rama1.
+  - 15. Crea el fichero AvioCarrega.java en la carpeta aeronaus con el contenido siguiente:
+```Java
+	package aeronaus;
+	public class AvioCarrega extends Aeronau {
+		private int paquets;
+		public int getPaquets() { 
+			return paquets; }
+	public void setPaquets(int paquets) { 
+		this.paquets= paquets; }
+	}
+```
+  - 16. Modifica el archivo AvioPassatgers (carpeta aeronaus) haciendo que el dato passatgers pase a ser protected.
+  - 17. Modifica el archivo Aeronau.java para hacer que todos los datos sean protected.
+  - 18. Haz un commit de los cambios con el mensaje "versión segunda rama".
 - 70\. Git · Ejercicio 0004
-- 70\. Git · Ejercicio 0005
-- 70\. Git · Ejercicio 0006
-- 70\. Git · Ejercicio 0007
-- 70\. Git · Ejercicio 0008
-- 70\. Git · Ejercicio 0009
-- 70\. Git · Ejercicio 0010
 
 * * *
