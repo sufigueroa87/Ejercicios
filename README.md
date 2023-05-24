@@ -607,6 +607,45 @@
 	}
 ```
 - 70\. Refacción · Ejercicio 0006
+  - Reescribe el método calculaImportFactura para mejorarlo usando técnicas de refacción.
+```Java
+	package refaccio;
+
+	public class Ej_70_Refaccion_Ejercicio0006 {
+		
+		public static Double calculaImportFactura(int article1, int article2, int article3) {
+			Double importTarifa1 = 0.00;
+			Double importTarifa2 = 0.00;
+			Double importTarifa3 = 0.00;
+			Double importTotal = 0.00;
+			Double importTotalIVA = 0.00;
+			
+			importTarifa1 = article1 * 3.50;
+			importTarifa1Iva = importTarifa1 * 1,21;
+			System.out.println("S'han comprat "+article1+" unitats de l'article1");
+			System.out.println("El preu total de l'article1 (sense IVA) és :"+importTarifa1+"€");
+			System.out.println("El preu total de l'article1 (amb IVA) és :"+importTarifa1Iva+"€");
+			
+			importTarifa2 = article2 * 7.75;
+			importTarifa2Iva = importTarifa2 * 1,21;
+			System.out.println("S'han comprat "+article2+" unitats de l'article2");
+			System.out.println("El preu total de l'article2 (sense IVA) és :"+importTarifa2+"€");
+			System.out.println("El preu total de l'article2 (amb IVA) és :"+importTarifa2Iva+"€");
+			
+			importTarifa3 = article3 * 10.25;
+			importTarifa3Iva = importTarifa3 * 1,21;
+			System.out.println("S'han comprat "+article3+" unitats de l'article3");
+			System.out.println("El preu total de l'article3 (sense IVA) és :"+importTarifa3+"€");
+			System.out.println("El preu total de l'article3 (amb IVA) és :"+importTarifa3Iva+"€");
+			
+			importTotal = article1 * 3.50 + article2 * 7.75 + article3 * 10.25;
+			System.out.println("El preu total (sense IVA) és :"+importTotal+"€");
+			importTotalIVA = importTotal + importTotal/100*21;
+			System.out.println("El preu total (amb IVA) és :"+importTotalIVA+"€");
+			return importTotalIVA;
+		}
+	} 
+```
 
 - 70\. Git · Ejercicio 0001
   - 1. Clona el repositorio público https://github.com/ioc-dam-m05/EAC3.git.
