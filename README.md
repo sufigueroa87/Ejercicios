@@ -606,7 +606,7 @@
 		}
 	}
 ```
-- 70\. Refacción · Ejercicio 0006
+- [70\. Refacción · Ejercicio 0006](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200006)
   - Reescribe el método calculaImportFactura para mejorarlo usando técnicas de refacción.
 ```Java
 	package refaccio;
