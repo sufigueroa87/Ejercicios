@@ -404,7 +404,7 @@
 
 ### 70\. Herramientas para el control y documentación del programario / Control de versiones
 
-- 70\. Refacción · Ejercicio 0001
+- [70\. Refacción · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200001)
   - Reescribe la clase EAC3 para mejorar su método preuAmbDescompte, aplicando técnicas de refacción.
   - El método recibe un precio y devuelve el resultado de aplicarle distintos descuentos.
   - Concretamente:
@@ -445,7 +445,7 @@
 		}
 	}
   ```
-- 70\. Refacción · Ejercicio 0002
+- [70\. Refacción · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200002)
   - Reescribe el método souAmbEstadis para mejorarlo aplicando técnicas de refacción.
   - El método recibe una antigüedad y devuelve el resultado de aplicarle distintos aumentos de sueldo. Concretamente:
     - a) Si la antigüedad es inferior a 9 años, devuelve -1 y se acaba la ejecución.
@@ -479,7 +479,7 @@
 		}
 	}
 ```
-- 70\. Refacción · Ejercicio 0003
+- [70\. Refacción · Ejercicio 0003](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200003)
   - Reescribe la clase siguiente para mejorar el método resumIva de la clase ExRefaccio aplicando las refacciones que consideres.
   - El método calcula el IVA soportad, el IVA repercutido y el resultado de IVA a partir de los importes de compras y ventas.
 ```Java
@@ -543,7 +543,7 @@
 		
 	} // fi de la classe
 ```
-- 70\. Refacción · Ejercicio 0005
+- [70\. Refacción · Ejercicio 0005](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200005)
   - Reescribe la clase siguiente para mejorar el método calculaImportLloguer de la clase Lloguer.
   - Este método se encarga de calcular el importe total del alquiler con IVA incluido.
   - También imprime información relativa a la cantidad de productos de cada tipo y el subtotal individual sin IVA.
