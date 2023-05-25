@@ -381,26 +381,253 @@
 
 ### 69\. Diseño y realización de pruebas de programario
 
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0001
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0002
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0003
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0004
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0005
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0006
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0007
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0008
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0009
-- 69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0010
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0001]()
+  - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **precioConDescuento**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
+  - Hay que seguir los pasos:
+    - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
+    - 2. Identificar, a partir de las condiciones, las clases de equivalencia de las entradas y salidas.
+    - 3. Diseñar los casos de prueba a partir de las clases de equivalencia seleccionadas anteriormente. Hay que tener en cuenta:
+      - Como mínimo tiene que haber un representante de cada clase de equivalencia.
+      - Se tienen que cubrir los valores límite, valor intermedio (si existe; en el caso de intervalos sin línite trivial puede elegirse cualquier valor; si el resultado tiene que ser un entero y el valor intermedio sale decimales, podemos redondear) i los errores típicos.
+      - Se tiene que recorrer almenos 1 vez cada camino independiente. Por tanto, necesitaremos:
+        - Realizar el diagrama de flujo.
+        - Calcular la complejidad ciclomática.
+        - Escribir los caminos independientes.
+        - Asegurarnos que los casos de prueba cubren todos los caminos; si detectamos que algún caso se queda sin cubrir, necesitaremos añadir más casos.
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0001;
+
+	public class Ej_69_Pruebas_Programario_Ejercicio0001 {
+		
+		private static final int DESCUENTO_5 = 5;
+		private static final int DESCUENTO_10 = 10;
+		
+		public static float precioConDescuento(float precio) throws PrecioException {
+	  		float resultado;
+
+	  		if(precio <0) throw new PrecioException();
+
+	  		resultado = calcularDescuento(precio, DESCUENTO_10); // descontamos el 10% al precio
+	  		
+	  		if(precio >= 5000 && precio <= 10000){ // entre 500 y 1000, los dos incluídos
+	  		
+	  			resultado = calcularDescuento(resultado, DESCUENTO_5);
+	  		
+	  			System.out.println("resultado: " + resultado);
+	  		} else if (precio > 10000) { // por encima de 10000
+	  			
+	  			resultado = calcularDescuento(resultado, DESCUENTO_10);
+	  			System.out.println("resultado: " + resultado);
+
+	  		}
+	  		return resultado;
+	  	}
+
+	private static float calcularDescuento(float precio, float descuento) {
+		float resultado;
+		resultado = precio - precio * descuento / 100;
+		return resultado;
+	}
+}
+```
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0001;
+
+	public class PrecioException extends Exception {
+	  	public PrecioException() {
+	  	super("Preu negatiu");
+		}
+	}
+```
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0002]()
+  - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **operacionsEsfera**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
+  - Hay que seguir los pasos:
+    - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
+    - 2. Identificar, a partir de las condiciones, las clases de equivalencia de las entradas y salidas.
+    - 3. Diseñar los casos de prueba a partir de las clases de equivalencia seleccionadas anteriormente. Hay que tener en cuenta:
+      - Como mínimo tiene que haber un representante de cada clase de equivalencia.
+      - Se tienen que cubrir los valores límite, valor intermedio (si existe; en el caso de intervalos sin línite trivial puede elegirse cualquier valor; si el resultado tiene que ser un entero y el valor intermedio sale decimales, podemos redondear) i los errores típicos.
+      - Se tiene que recorrer almenos 1 vez cada camino independiente. Por tanto, necesitaremos:
+        - Realizar el diagrama de flujo.
+        - Calcular la complejidad ciclomática.
+        - Escribir los caminos independientes.
+        - Asegurarnos que los casos de prueba cubren todos los caminos; si detectamos que algún caso se queda sin cubrir, necesitaremos añadir más casos.
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0002;
+	
+	public class Ej_69_Pruebas_Programario_Ejercicio0002 {
+	
+		public static double operacionsEsfera (double radi, String operacio){
+			double resultat=0;
+			
+			if(radi <0) {
+				resultat = -1;
+			} else if(operacio.equals("perimetre")){
+				resultat= 2 * Math.PI * radi;
+			} else if(operacio.equals("superficie")){
+				resultat= 4 * Math.PI * Math.pow(radi, 2);
+			} else if (operacio.equals("volum")){
+				resultat= 4.0 / 3 * Math.PI * Math.pow(radi, 3);
+			} 
+			return resultat;
+		}
+	}
+```
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0003]()
+  - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **saluda**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
+  - Hay que seguir los pasos:
+    - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
+    - 2. Identificar, a partir de las condiciones, las clases de equivalencia de las entradas y salidas.
+    - 3. Diseñar los casos de prueba a partir de las clases de equivalencia seleccionadas anteriormente. Hay que tener en cuenta:
+      - Como mínimo tiene que haber un representante de cada clase de equivalencia.
+      - Se tienen que cubrir los valores límite, valor intermedio (si existe; en el caso de intervalos sin línite trivial puede elegirse cualquier valor; si el resultado tiene que ser un entero y el valor intermedio sale decimales, podemos redondear) i los errores típicos.
+      - Se tiene que recorrer almenos 1 vez cada camino independiente. Por tanto, necesitaremos:
+        - Realizar el diagrama de flujo.
+        - Calcular la complejidad ciclomática.
+        - Escribir los caminos independientes.
+        - Asegurarnos que los casos de prueba cubren todos los caminos; si detectamos que algún caso se queda sin cubrir, necesitaremos añadir más casos.
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0003;
+
+	public class Ej_69_Pruebas_Programario_Ejercicio0003 {
+	
+		public static String saluda(int hora) throws SaludaException { //el método saluda devuelve una salutación en función de la hora del día
+			if(hora < 0 || hora > 23) throw new SaludaException(); //si el método recibe un valor incorrecto, se lanza la excepción definida en la clase SaludaException
+			else if (hora < 6 || hora >= 20) return "Bona nit";
+			else if (hora < 14) return "Bon dia";
+			else return "Bona tarda";
+		}
+	}
+```
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0003;
+	public class SaludaException extends Exception {
+		public SaludaException() {
+			super("Hora inexistent");
+		}
+	}
+```
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0004]()
+  - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaDuresaMohs**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
+  - Hay que seguir los pasos:
+    - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
+    - 2. Identificar, a partir de las condiciones, las clases de equivalencia de las entradas y salidas.
+    - 3. Diseñar los casos de prueba a partir de las clases de equivalencia seleccionadas anteriormente. Hay que tener en cuenta:
+      - Como mínimo tiene que haber un representante de cada clase de equivalencia.
+      - Se tienen que cubrir los valores límite, valor intermedio (si existe; en el caso de intervalos sin línite trivial puede elegirse cualquier valor; si el resultado tiene que ser un entero y el valor intermedio sale decimales, podemos redondear) i los errores típicos.
+      - Se tiene que recorrer almenos 1 vez cada camino independiente. Por tanto, necesitaremos:
+        - Realizar el diagrama de flujo.
+        - Calcular la complejidad ciclomática.
+        - Escribir los caminos independientes.
+        - Asegurarnos que los casos de prueba cubren todos los caminos; si detectamos que algún caso se queda sin cubrir, necesitaremos añadir más casos.
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0004;
+
+	public class Ej_69_Pruebas_Programario_Ejercicio0004 {
+
+		public static String determinaDuresaMohs(int duresa) throws DuresaIncorrecteException{ //devuelve el equivalente en texto (mineral) al valor de la dureza introducida
+			if(duresa>0 && duresa<=10) {
+				if (duresa==10) return "Diamant";
+				else if (duresa>7) return "Topazi";
+				else if (duresa>4) return "Apatita";
+				else if (duresa>2) return "Calcita";
+				else return "Talc";
+			}
+			else throw new DuresaIncorrecteException("Valor duresa " + duresa + " incorrecte."); 
+		}
+	}
+```
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0004;
+
+	@SuppressWarnings("serial")
+	public class DuresaIncorrecteException extends Exception {
+		public DuresaIncorrecteException(String missatge) {
+			super(missatge);
+		}
+	}
+```
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0005]()
+  - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaPermisos**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
+  - Hay que seguir los pasos:
+    - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
+    - 2. Identificar, a partir de las condiciones, las clases de equivalencia de las entradas y salidas.
+    - 3. Diseñar los casos de prueba a partir de las clases de equivalencia seleccionadas anteriormente. Hay que tener en cuenta:
+      - Como mínimo tiene que haber un representante de cada clase de equivalencia.
+      - Se tienen que cubrir los valores límite, valor intermedio (si existe; en el caso de intervalos sin línite trivial puede elegirse cualquier valor; si el resultado tiene que ser un entero y el valor intermedio sale decimales, podemos redondear) i los errores típicos.
+      - Se tiene que recorrer almenos 1 vez cada camino independiente. Por tanto, necesitaremos:
+        - Realizar el diagrama de flujo.
+        - Calcular la complejidad ciclomática.
+        - Escribir los caminos independientes.
+        - Asegurarnos que los casos de prueba cubren todos los caminos; si detectamos que algún caso se queda sin cubrir, necesitaremos añadir más casos.
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0005;
+	
+	public class Ej_69_Pruebas_Programario_Ejercicio0005 {
+	
+		public static String determinaPermisos(int permis) throws PermisIncorrecteException{
+			if(permis>=0 && permis<=9) {
+				if (permis==9) return "Total";
+				else if (permis>6) return "Alt";
+				else if (permis>3) return "Moderat";
+				else if (permis>0) return "Baix";
+				else return "Sense permisos";
+			} else throw new PermisIncorrecteException("Permis " + permis + " incorrecte.");
+		}
+	}
+```
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0005;
+		@SuppressWarnings("serial")
+		public class PermisIncorrecteException extends Exception {
+		
+		public PermisIncorrecteException(String missatge) {
+			super(missatge);
+		}
+	}
+```
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0006]()
+  - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaCategoriaSaffirSimpson**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
+  - Hay que seguir los pasos:
+    - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
+    - 2. Identificar, a partir de las condiciones, las clases de equivalencia de las entradas y salidas.
+    - 3. Diseñar los casos de prueba a partir de las clases de equivalencia seleccionadas anteriormente. Hay que tener en cuenta:
+      - Como mínimo tiene que haber un representante de cada clase de equivalencia.
+      - Se tienen que cubrir los valores límite, valor intermedio (si existe; en el caso de intervalos sin línite trivial puede elegirse cualquier valor; si el resultado tiene que ser un entero y el valor intermedio sale decimales, podemos redondear) i los errores típicos.
+      - Se tiene que recorrer almenos 1 vez cada camino independiente. Por tanto, necesitaremos:
+        - Realizar el diagrama de flujo.
+        - Calcular la complejidad ciclomática.
+        - Escribir los caminos independientes.
+        - Asegurarnos que los casos de prueba cubren todos los caminos; si detectamos que algún caso se queda sin cubrir, necesitaremos añadir más casos.
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0006;
+	public class Ej_69_Pruebas_Programario_Ejercicio0006 {
+		public static String determinaCategoriaSaffirSimpson(int velocitat) throws VelocitatIncorrectaException{
+			if(velocitat>118 && velocitat<=400) {
+				if (velocitat>250) return "Cat. 5";
+				else if (velocitat>209) return "Cat. 4";
+				else if (velocitat>177) return "Cat. 3";
+				else if (velocitat>153) return "Cat. 2";
+				else return "Cat. 1";
+			} else throw new VelocitatIncorrectaException("Velocitat del vent " + velocitat + " incorrecta.");
+		}
+	}
+```
+```Java
+	package ej_69_Pruebas_Programario_Ejercicio0006;
+		@SuppressWarnings("serial")
+		public class VelocitatIncorrectaException extends Exception {
+			public VelocitatIncorrectaException(String missatge) {
+			super(missatge);
+		}
+	}
+```
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0001
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0002
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0003
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0004
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0005
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0006
-- 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0007
-- 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0008
-- 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0009
-- 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0010
 
 ### 70\. Herramientas para el control y documentación del programario / Control de versiones
 
