@@ -586,7 +586,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0006]()
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0006](https://github.com/sufigueroa87/Ejercicios/blob/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200006/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200006.pdf)
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaCategoriaSaffirSimpson**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
