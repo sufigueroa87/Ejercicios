@@ -413,9 +413,9 @@
     - c) Si el precio está entre 5000 y 10000, los dos incluídos, aplica un 5% al resultado de haber aplicado el descuento indicado en el punto b.
     - d) Si el precio es superior a 10000, aplica un 10% al resultado de habet aplicado el descuento indicado en el punto b.
   ```Java
-  	package eac3;
+  	package ej_70_Refaccion_Ejercicio0001;
 	
-	public class EAC3 {
+	public class Ej_70_Refaccion_Ejercicio0001 {
 		public static float preuAmbDescompte(float preu) throws PreuException{
 			float resultat;
 
@@ -437,7 +437,7 @@
 	}
   ```
   ```Java
-	package eac3;
+	package refaccion_0001;
 
 	public class PreuException extends Exception{
 		public PreuException() {
@@ -454,9 +454,9 @@
     - d) Si la antigüedad es entre 21 y 26 años, se aplica un nuevo aumento de sueldo del 5% al resultado de haber aplicado el aumento indicado en el punto b.
     - e) Si la antigüedad es superior a 26 años, aplica un 8% al resultado de haber aplicado el aumento indicado en el punto b.
 ```Java
-	package eac3;
+	package ej_70_Refaccion_Ejercicio0002;
 	
-	public class EAC3 {
+	public class Ej_70_Refaccion_Ejercicio0002 {
 		public static double souAmbEstadis (int antiguitat){
 			double sou=0;
 			double souBase=1400;
@@ -483,8 +483,8 @@
   - Reescribe la clase siguiente para mejorar el método resumIva de la clase ExRefaccio aplicando las refacciones que consideres.
   - El método calcula el IVA soportad, el IVA repercutido y el resultado de IVA a partir de los importes de compras y ventas.
 ```Java
-	package eac3;
-	public class ExRefaccio{
+	package ej_70_Refaccion_Ejercicio0003;
+	public class Ej_70_Refaccion_Ejercicio0003{
 		public static void resumIva (float importCompres, float importVendes) {
 			System.out.printf("IVA suportat: %.2f\n", importCompres*0.21f);
 			System.out.printf("IVA repercutit: %.2f\n", importVendes*0.21f);
@@ -495,13 +495,16 @@
 ```
 - 70\. Refacción · Ejercicio 0004
   - Reescribe la clase siguiente para mejorar el método calculaImportFactura de la clase Lloguer.
+  - Este método se encarga de calcular el importe total de la factura con IVA incluido.
+  - También imprime información relativa al número de productos y servicios.
 ```Java
-	package refaccio;
+	package ej_70_Refaccion_Ejercicio0004;
 
-	public class Factura {
+	public class Ej_70_Refaccion_Ejercicio0004 {
 		// Área per definir variables globals
 		
-		/*
+		/* 
+		
 		 * Aquest mètode s'encarrega de calcular l'import total de la factura amb IVA inclòs
 		 * També imprimeix informació relativa al nombre de productes i serveis
 		 * @param nroMinutsTarifa1
@@ -540,37 +543,13 @@
 		
 	} // fi de la classe
 ```
-```Java
-	// Fitxer Prova.java
-
-	package refaccio;
-
-	public class Prova {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Factura factura = new Factura();
-		System.out.println ("Total: " + Factura.calculaImportFactura(100,50,25));
-	}
-}
-```
 - 70\. Refacción · Ejercicio 0005
   - Reescribe la clase siguiente para mejorar el método calculaImportLloguer de la clase Lloguer.
+  - Este método se encarga de calcular el importe total del alquiler con IVA incluido.
+  - También imprime información relativa a la cantidad de productos de cada tipo y el subtotal individual sin IVA.
 ```Java
-	// Fitxer Lloguer.java
-	package refaccio;
-	public class Lloguer {
-		// Área per definir variables globals
-		/*
-		* Aquest mètode s'encarrega de calcular l'import total del lloguer amb IVA
-		inclòs
-		* També imprimeix informació relativa al nombre de productes de cada tipus i
-		subtotal individual sense IVA
-		* @param nroProductesTipus1
-		* @param nroProductesTipus2
-		* @param nroProductesTipus3
-		* @return importTotal
-		*/
+	package ej_70_Refaccion_Ejercicio0005;
+	public class Ej_70_Refaccion_Ejercicio0005 {
 		public static Double calculaImportLloguer(int nroProductesTipus1, int
 		nroProductesTipus2, int nroProductesTipus3) {
 			Double importTipus1 = 0.00;
@@ -595,21 +574,10 @@
 	// ...... altres mètodes de la classe
 	} // fi de la classe
 ```
-```Java
-	// Fitxer Prova.java
-	package refaccio;
-	public class Prova {
-		public static void main(String[] args) {
-			// TODO Auto-generated method stub
-			Lloguer lloguer = new Lloguer();
-			System.out.println ("Total: " + Lloguer.calculaImportLloguer(1,2,3));
-		}
-	}
-```
 - [70\. Refacción · Ejercicio 0006](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200006)
   - Reescribe el método calculaImportFactura para mejorarlo usando técnicas de refacción.
 ```Java
-	package refaccio;
+	package ej_70_Refaccion_Ejercicio0006;
 
 	public class Ej_70_Refaccion_Ejercicio0006 {
 		
