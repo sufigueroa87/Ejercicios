@@ -1,11 +1,5 @@
-package refaccio;
+package ej_70_Refaccion_Ejercicio0006;
 
-/**
- * Clase que calcula el total de una factura, con iva y sin iva.
- * También da información más detallada del contenido de la factura.
- * @author S. Figueroa
- * @version 2023
- */
 public class Ej_70_Refaccion_Ejercicio0006 {
 	private static final double PREU_ARTICLE3 = 10.25;
 	private static final double PREU_ARTICLE2 = 7.75;
