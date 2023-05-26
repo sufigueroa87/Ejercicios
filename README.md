@@ -622,11 +622,11 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0007]
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0007](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200007)
   - A partir del siguiente diagrama de flujo, calcula la complejidad ciclomática y define el conjunto básico de caminos.
 ![69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0007](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200007/Ej_69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200007.png)
 
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0008]
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0008](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200008)
   - A partir del siguiente diagrama de flujo, calcula la complejidad ciclomática y define el conjunto básico de caminos.  
 ![69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0008](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200008/Ej_69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200008.png)
 
