@@ -622,6 +622,14 @@
 		}
 	}
 ```
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0007]
+  - A partir del siguiente diagrama de flujo, calcula la complejidad ciclomática y define el conjunto básico de caminos.
+
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0008]
+  - A partir del siguiente diagrama de flujo, calcula la complejidad ciclomática y define el conjunto básico de caminos.
+  
+
+
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0001
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0002
 - 69\. Pruebas de programario · JUnit5 · Eclipse · Ejercicio 0003
@@ -840,6 +848,51 @@
 			return importTotalIVA;
 		}
 	} 
+```
+- [70\. Refacción · Ejercicio 0007]()
+  - Reescribe el método Salario para mejorarlo usando técnicas de refacción.
+  - El método recibe como parámetro la antigüedad de un trabajador y realiza los cálculos que se indican en el mismo método, para saber su salario con bonificaciones.
+  
+```Java
+	package ej_70_Refaccion_Ejercicio0007;
+
+	public class Ej_70_Refaccion_Ejercicio0007 {
+		
+		public static float Salario (int antiguedad) {
+			
+			float salario = 0;
+			
+			if (antiguedad < 10) {
+				salario = 1200 + 1200*1/100;
+			} 
+			else if (antiguedad >= 10 && antiguedad < 20) {
+				salario = 1200 + 1200*1/100;
+				salario = salario + salario*3/100;
+			}
+			else {
+				salario = 1200 + 1200*1/100;
+				salario = salario + salario*5/100;
+			}
+			
+			return salario;
+		}
+	} 
+```
+- [70\. Refacción · Ejercicio 0008]()
+  - Reescribe el método longitudCircumferencia(double radi1, double radi2) para mejorarlo usando técnicas de refacción.
+  
+```Java
+	package ej_70_Refaccion_Ejercicio0008;
+
+	public class Ej_70_Refaccion_Ejercicio0008 {
+		
+		public static void longitudCircumferencia(double radio1, double radio2) {
+		
+		System.out.println("La longitud de la primera circumferencia es " + 2*Math.PI*radio1);
+		System.out.println("La longitud de la segunda circumferencia es " + 2*Math.PI*radio2);
+		System.out.println("La diferencia entre las longitudes es " + (2*Math.PI*radio1-2*Math.PI*radio2));	
+			
+	}
 ```
 
 - 70\. Git · Ejercicio 0001
