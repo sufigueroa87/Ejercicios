@@ -381,7 +381,7 @@
 
 ### 69\. Diseño y realización de pruebas de programario
 
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0001]()
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200001)
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **precioConDescuento**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
@@ -439,7 +439,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0002]()
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200002)
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **operacionsEsfera**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
