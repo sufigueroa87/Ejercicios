@@ -720,7 +720,7 @@
 		}
 	}
 ```
-- 70\. Refacción · Ejercicio 0004
+- [70\. Refacción · Ejercicio 0004](https://github.com/sufigueroa87/Ejercicios/tree/main/70.%20Refacci%C3%B3n%20%C2%B7%20Ejercicio%200004)
   - Reescribe la clase siguiente para mejorar el método calculaImportFactura de la clase Lloguer.
   - Este método se encarga de calcular el importe total de la factura con IVA incluido.
   - También imprime información relativa al número de productos y servicios.
