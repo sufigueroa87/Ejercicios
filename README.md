@@ -2,7 +2,7 @@
 
 ### 58. Fundamentos de la programación orientada a objetos.
 
-- [58\. Fundamentos de la POO · Ejercicio 0001]()
+- [58\. Fundamentos de la POO · Ejercicio 0001]() IOC
   - Relacionar las preguntas siguientes, relativas al proceso de descomposición en objetos de un partido de futbol de primera división, con las respuestas correctas:
     - Cuántos objetos jugador hay?
     - Puede variar el nombre de objetos jugador?
@@ -11,10 +11,10 @@
     - Y si dos jugadores se pueden cambiar la camiseta entre ellos?
     - Tiene sentido que un objeto árbitro tenga una operación recibirTarjeta?
 
-- [58\. Fundamentos de la POO · Ejercicio 0002]()
+- [58\. Fundamentos de la POO · Ejercicio 0002]() IOC
   - Descompón en objetos el juego del Pacman. Usa nombres descriptivos para los objetos.
 
-- [58\. Fundamentos de la POO · Ejercicio 0003]()
+- [58\. Fundamentos de la POO · Ejercicio 0003]() IOC
   - Descompón el juego de los barcos.
   - En el juego de los barcos pueden participar 2 jugadores.
   - Cada jugador tiene 2 tableros, que solo él puede ver (el contrincante no).
@@ -42,7 +42,7 @@
 
 ### 60. Creación de aplicaciones escalables. Encapsulación. Polimorfismo. Herencia. Interfaces.
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0001]()
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0001]() IOC
   - Tenemos la siguiente clase Velero.
   - El retorno del método toString son los valores separados por comas de todos los atributos del objeto de tipo velero que llama al método.
   - Tenemos que implementar la superclase abstracta Barco de la que hereda la clase Velero.
@@ -71,7 +71,7 @@
 	}
 ```
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0002]()
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0002]() IOC
   - Tenemos la siguiente clase Adulto.
   - Esta clase está definida por:
     - Su nombre.
@@ -117,7 +117,7 @@
 
 - [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0008]()
 
-- [60\. Interfaces · Ejercicio 0001]()
+- [60\. Interfaces · Ejercicio 0001]() IOC
   - Tenemos la siguiente interfaz Matricula.
   - Implementarla en la clase Barco, teniendo en cuenta que el método matricular() tiene que pedir al usuario que introduzca la matrícula del barco que devolverá el método.
 ```Java
@@ -126,7 +126,7 @@
 	}
 ```
 
-- [60\. Interfaces · Ejercicio 0002]()
+- [60\. Interfaces · Ejercicio 0002]() IOC
   - Tenemos la siguiente interfaz Intensidad.
   - Implementarla en la clase de la jerarquía formada por la superclase Atraccion , que contiene subclases como la clase Adulto.
   - El método esFuerte() se tiene que pedir al usuario si la atracción es de intensidad fuerte o no.
@@ -146,7 +146,7 @@
 
 ### 61. Clases fundamentales. Exceptions. Colecciones. List. Iterator. Comparable. Comparator.
 
-- [61\. Excepciones · Ejercicio 0001]()
+- [61\. Excepciones · Ejercicio 0001]() IOC
   - En el método comprovarMatricula(Barco barco), tenemos que comprovar si el barco pasado por parámetro está matriculado o no con el método adecuado de esta clase.
   - En los 2 casos tenemos que lanzar una excepción de tipo ExcepcionBarco con el código pertinente para después capturar la excepción producida por el barco pasado por parámetro.
   - Cuando capturemos la excepción, se tiene que imprimir por pantalla el mensaje correspondiente al código de la excepción definido en la clase ExcepcionBarco.
@@ -231,7 +231,7 @@
 	}
 ```
 
-- [61\. Excepciones · Ejercicio 0002]()
+- [61\. Excepciones · Ejercicio 0002]() IOC
   - En el método tieneAccesoMR() hay que comprovar si la atracción que llama a este método tiene acceso para personas con movilidad reducida o no.
   - En los dos casos tenemos que lanzar una excepción de tipo ExcepcionAtraccion con lo pertinente para después capturar la excepción producida.
   - Cuando capturemos la excepción, se tiene que imprimir por pantalla el mensaje correspondiente al código definido en la clase ExcepcionAtraccion.
@@ -300,6 +300,26 @@
 	}
 ```
 
+- [61\. Excepciones · Ejercicio 0003]() INS Esteve Terradas i Illa
+  - Se pretende desarrollar una aplicación que simule el funcionamiento de un cajero automático.
+  - Crea una clase que se llame cuenta que gestione las operaciones sobre la cuenta.
+  - Además de los constructores y campos que se necesiten, la clase contará con los siguientes métodos:
+    - void ingresar(float c) : para añadir dinero.
+    - void extraer(float c) : para sacar dinero.
+    - float getSaldo : devuelve el saldo actual.
+    
+  - Por otro lado, existirá una clase con un método main encargada de la captura y presentación de datos y la gestión de la cuenta.
+  - Al iniciar la aplicación se mostrará el siguiente menú:
+    - 1. Crear cuenta vacía.
+    - 2. Crear cuenta con saldo inicial.
+    - 3. Ingreso de dinero.
+    - 4. Sacar dinero.
+    - 5. Ver saldo.
+    - 6. Salir.
+    
+  - Por último, haz las modificaciones necesarias para añadir un mecanismo de excepciones para tratar la situación de saldo insuficiente.
+  - Si se quiere sacar más dinero que el saldo disponible, lanzaremos una excepción personalizada SaldoInsuficienteException. Se tendrá que capturar en el main.
+
 - [61\. Colecciones · List · Ejercicio 0001]()
 
 - [61\. Colecciones · List · Ejercicio 0002]()
@@ -346,7 +366,7 @@
 
 ### 65\. Aplicaciones con BD no orientadas a objetos
 
-- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0001]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0001]() IOC
   - Objetivos:
     - Establecer la conexión con la base de datos.
     - Mostrar los nombres de las atracciones de una zona determinada de un parque de atracciones con acceso para personas con movilidad reducida.
@@ -387,7 +407,7 @@
 
 ### 68\. Instalación y uso de entornos de desarrollo
 
-- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001)
+- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001) IOC
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo de un seguro.
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos cliente", inicialmente activada.
@@ -454,7 +474,7 @@
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001.jpg">
 </p>
 
-- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002)
+- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002) IOC
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos Vivienda", inicialmente activada.
@@ -523,7 +543,7 @@
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002.jpg"/>
 </p>
 
-- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0003](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200003)
+- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0003](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200003) IOC
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de vídeo bajo demanda de una compañía.
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos Contrato", inicialmente activada.
@@ -587,7 +607,7 @@
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200003.jpg"/>
 </p>
 
-- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0004](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200004)
+- [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0004](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200004) IOC
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de un seguro de coche para un concesionario (solo seguros a todo riesgo).
   - <ins>La pantalla está dividida en 3 bloques o partes:</ins>
     - Superior "Datos Vehículo", inicialmente activada.
@@ -714,7 +734,7 @@
     - Ejecución del servlet:
       - Botón derecho encima del archivo html -> Run As -> 1 Run on Server -> Seleccionar el servidor 
         
-- [68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Servlet%20Apache%20Tomcat%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002)
+- [68\. Servlet Apache Tomcat · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Servlet%20Apache%20Tomcat%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002) IOC
   - Utiliza el entorno de desarrollo Eclipse para trabajar con una aplicación cliente-servidor, haciendo uso de un servlet.
   - Usaremos el servidor de aplicaciones Apache Tomcat para realizar una aplicación servlet que:
     - Llame a un servlet a través de un formulario HTML, que permite introducir los datos personales de una persona.
@@ -737,7 +757,7 @@
 
 ### 69\. Diseño y realización de pruebas de programario
 
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200001)
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200001) IOC
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **precioConDescuento**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
@@ -795,7 +815,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200002)
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200002) IOC
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **operacionsEsfera**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
@@ -829,7 +849,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0003]()
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0003]() IOC
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **saluda**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
@@ -863,7 +883,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0004]()
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0004]() IOC
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaDuresaMohs**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
@@ -903,7 +923,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0005]()
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0005]() IOC
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaPermisos**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
@@ -942,7 +962,7 @@
 		}
 	}
 ```
-- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0006](https://github.com/sufigueroa87/Ejercicios/blob/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200006/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200006.pdf)
+- [69\. Pruebas de programario · Diseño de las clases de equivalencia · Ejercicio 0006](https://github.com/sufigueroa87/Ejercicios/blob/main/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200006/69.%20Pruebas%20de%20programario%20%C2%B7%20Dise%C3%B1o%20de%20las%20clases%20de%20equivalencia%20%C2%B7%20Ejercicio%200006.pdf) IOC
   - Realiza el diseño de los casos de prueba para comprovar el funcionamiento correcto del método **determinaCategoriaSaffirSimpson**, teniendo en cuenta únicamente el valor del parámetro de entrada del método.
   - Hay que seguir los pasos:
     - 1. Identificar las condiciones, restricciones o contenidos de las entradas y salidas.
