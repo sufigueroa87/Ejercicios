@@ -342,7 +342,7 @@
 
 ### 64\. Introducción al diagrama estático UML
 
-- 64\. 
+- [64\.]() 
 
 ### 65\. Aplicaciones con BD no orientadas a objetos
 
@@ -383,7 +383,7 @@
 
 ### 67\. Desarrollo del programario
 
-- [67\.]/( 
+- [67\.]() 
 
 ### 68\. Instalación y uso de entornos de desarrollo
 
