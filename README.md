@@ -1,3 +1,356 @@
+## Introducción a la programación orientada a objetos. Clases.
+
+### 58. Fundamentos de la programación orientada a objetos.
+
+- 58\. [Fundamentos de la POO · Ejercicio 0001]()
+  - Relacionar las preguntas siguientes, relativas al proceso de descomposición en objetos de un partido de futbol de primera división, con las respuestas correctas:
+    - Cuántos objetos jugador hay?
+    - Puede variar el nombre de objetos jugador?
+    - Tiene sentido que haya objetos árbitro?
+    - Tiene sentido que el número de camiseta sea un atributo de jugador?
+    - Y si dos jugadores se pueden cambiar la camiseta entre ellos?
+    - Tiene sentido que un objeto árbitro tenga una operación recibirTarjeta?
+
+- 58\. [Fundamentos de la POO · Ejercicio 0002]()
+  - Descompón en objetos el juego del Pacman. Usa nombres descriptivos para los objetos.
+
+- 58\. [Fundamentos de la POO · Ejercicio 0003]()
+  - Descompón el juego de los barcos.
+  - En el juego de los barcos pueden participar 2 jugadores.
+  - Cada jugador tiene 2 tableros, que solo él puede ver (el contrincante no).
+  - Cada tablero es una cuadrícula en 2 dimensiones.
+  - Las filas se identifican con un nombre y las columnas con una letra, de manera que en total en cada tablero hay un número de casillas igual a filas * columnas y cada casilla se puede identificar claramente con una coordenada (por ejemplo A-3, F-4, ...).
+  - Las dimensiones de los tableros de los dos jugadores son idénticas.
+  - Antes de empezar la partida, cada jugador ubica dentro de uno de sus tableros:
+    - Un portaaviones, que ocupa 4 casillas.
+    - Dos destructores, que ocupan 3 casillas.
+    - Tres fragatas, que ocupan 2 casillas.
+    - Cuatro submarinos, que ocupan 1 casilla.
+- La única restricción es que no se pueden ubicar barcos en diagonal (solo horizontal y verticalmente).
+- Por turnos, cada jugador dice la coordenada asociada a una casilla. El contrincante mira su tablero y responde "agua" si en esta casilla no hay ningún barco, o "tocado" si hay una parte del barco, o "tocado y hundido" si es la última casilla para que un barco esté tocado por todas las casillas.
+- Gana quien logra hundir todos los barcos del contrincante.
+- Enumera todos los objetos que componen una partida en curso, suponiendo que los diferentes jugadores ya han hubicado los barcos en los tableros respectivos, de acuerdo con la metodología de orientación a objetos.
+- Indicar algún atributo de los objetos identificados.
+  
+### 59. Declaración de clases.
+
+- 59\. 
+
+* * *
+
+## Utilización avanzada de clases.
+
+### 60. Creación de aplicaciones escalables. Encapsulación. Polimorfismo. Herencia. Interfaces.
+
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0001]()
+  - Tenemos la siguiente clase Velero.
+  - El retorno del método toString son los valores separados por comas de todos los atributos del objeto de tipo velero que llama al método.
+  - Tenemos que implementar la superclase abstracta Barco de la que hereda la clase Velero.
+```Java
+	public class Velero extends Barco {
+		
+		int velas; //Total de velas
+
+		public Velero(String nombre, float eslora, int cabinas, int velas) {
+		    super(nombre, eslora, cabinas);
+		    this.velas = velas;
+		}   
+
+		public int getVelas() {
+		    return velas;
+		}
+
+		public void setVelas(int velas) {
+		    this.velas = velas;
+		}    
+
+		public String toString() {
+		    return super.toString()+ ", Velas=" + velas;
+		}
+		
+	}
+```
+
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0002]()
+  - Tenemos la siguiente clase Adulto.
+  - Esta clase está definida por:
+    - Su nombre.
+    - La zona del parque de atracciones donde seencuentra.
+    - Si tiene acceso para personas con movilidad reducida o no.
+    - La altura mínima que se tiene que tener para acceder.
+  - El método de la clase imprimirAtraccion() imprime los valores de todos los atributos, uno en cada línea, del objeto de tipo Adulto que llama al método.
+  - El parámetro tieneAccesoMR, es un boleano que indica si la atracción tiene acceso para personas con movilidad reducida o no.
+  - Hay que implementar la superclase abtracta Atraccion de la que hereda la clase Adulto. Pensad que también tienen que estar implementados los métodos accesores (setters y getters) de todos sus atributos.
+```Java
+	public class Adulto extends Atraccion {
+		private double alturaMinima; //Altura mínima para poder acceder a la atracción.
+		
+		public Adulto(String nombre, String zona, boolean tieneAccesoMR, double alturaMinima) {
+			super(nombre, zona, tieneAccesoMR);
+			this.alturaMinima = alturaMinima;
+		}
+		
+		public double getAlturaMinima() {
+			return alturaMinima;
+		}
+		
+		public void setAlturaMinima(double alturaMinima) {
+			this.alturaMinima = alturaMinima;
+		}
+	
+		public void imprimirAtraccion(){
+			super.imprimirAtraccion();
+			System.out.println(alturaMinima);
+		}
+	}
+```
+
+- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0003
+
+- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0004
+
+- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0005
+
+- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0006
+
+- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0007
+
+- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0008
+
+- 60\. Interfaces · Ejercicio 0001
+  - Tenemos la siguiente interfaz Matricula.
+  - Implementarla en la clase Barco, teniendo en cuenta que el método matricular() tiene que pedir al usuario que introduzca la matrícula del barco que devolverá el método.
+```Java
+	public interface Matricula {
+		public String matricular();
+	}
+```
+
+- 60\. Interfaces · Ejercicio 0002
+  - Tenemos la siguiente interfaz Intensidad.
+  - Implementarla en la clase de la jerarquía formada por la superclase Atraccion , que contiene subclases como la clase Adulto.
+  - El método esFuerte() se tiene que pedir al usuario si la atracción es de intensidad fuerte o no.
+  - Si el valor introducido es 1, se le asignará verdadero a un nuevo atributo boolean con nombre fuerte.
+  - Si el valor introducido es 0, se le asignará el valor falso.
+  - No tenéis que controlar si el usuario introduce un valor diferente de 1 o 0, supondremos que siempre se introduce 1 o 0.
+  - Para decidir en qué clase hay que implementar la interfaz, en la clase Atraccion o en la clase Adulto, tenéis que tener en cuenta que la intensidad solo es de las atracciones para adultos.
+```Java
+	public interface Intensidad {
+		public void esFuerte();
+	}
+```
+
+* * *
+
+## Clases fundamentales. 
+
+### 61. Clases fundamentales. Exceptions. Colecciones. List. Iterator. Comparable. Comparator.
+
+- [61\. Excepciones · Ejercicio 0001]()
+  - En el método comprovarMatricula(Barco barco), tenemos que comprovar si el barco pasado por parámetro está matriculado o no con el método adecuado de esta clase.
+  - En los 2 casos tenemos que lanzar una excepción de tipo ExcepcionBarco con el código pertinente para después capturar la excepción producida por el barco pasado por parámetro.
+  - Cuando capturemos la excepción, se tiene que imprimir por pantalla el mensaje correspondiente al código de la excepción definido en la clase ExcepcionBarco.
+```Java
+	public class ExcepcionBarco extends Exception {
+		private String codigoExcepcion;
+
+		public ExcepcionBarco(String codigoExcepcion) {
+
+		    this.codigoExcepcion = codigoExcepcion;
+
+		}
+
+		public String getMessage() {
+
+		    switch (codigoExcepcion) {
+		        case "0":
+		            return "El barco no está matriculado";
+		        default:
+		            return "El barco está matriculado";
+		    }
+		}
+	}
+```
+```Java
+	public class Barco{
+	   
+		private String matricula;
+		private String nombre;
+		private float eslora; //largada del barco
+		private int cabinas; //Total de cabines
+
+		public Vaixell(String matricula, String nombre, float eslora, int cabinas) {
+		    this.matricula=matricula;
+		    this.nombre = nombre;
+		    this.eslora = eslora;
+		    this.cabines = cabinas;
+		}
+
+		public String getNombre() {
+		    return nombre;
+		}
+
+		public void setNombre(String nombre) {
+		    this.nombre = nombre;
+		}
+
+		public float getEslora() {
+		    return eslora;
+		}
+
+		public void setEslora(float eslora) {
+		    this.eslora = eslora;
+		}
+
+		public int getCabinas() {
+		    return cabinas;
+		}
+
+		public void setCabinas(int cabinas) {
+		    this.cabinas = cabinas;
+		}   
+
+		public String toString() {
+		    return "Nombre=" + nombre + "\nEslora=" + eslora + "\nCabinas=" + cabinas;
+		}
+		
+		public boolean estaMatriculado(){
+		    
+		   if (matricula == null){ //No está matriculado
+		       return false; 
+		   }else{
+		       return true;
+		   }
+		   
+		}
+		
+		//TODO
+		public static void comprovarMatricula(Barco barco) throws ExcepcionBarco {
+
+		} 
+	}
+```
+
+- [61\. Excepciones · Ejercicio 0002]()
+  - En el método tieneAccesoMR() hay que comprovar si la atracción que llama a este método tiene acceso para personas con movilidad reducida o no.
+  - En los dos casos tenemos que lanzar una excepción de tipo ExcepcionAtraccion con lo pertinente para después capturar la excepción producida.
+  - Cuando capturemos la excepción, se tiene que imprimir por pantalla el mensaje correspondiente al código definido en la clase ExcepcionAtraccion.
+```Java
+	public class ExcepcionAtraccion extends Exception {
+		private String codigoExcepcion;
+
+		public ExcepcionAtraccion(String codigoExcepcion) {
+
+		    this.codigoExcepcion = codigoExcepcion;
+
+		}
+
+		public String getMessage() {
+
+		    switch (codigoExcepcion) {
+		        case "0":
+		            return "La atracción no tiene acceso para personas con movilidad reducida.";
+		        default:
+		            return "La atracción tiene acceso para personas con movilidad reducida.";
+		    }
+		}
+	}
+```
+```Java
+	public class Atraccion{
+	   
+		private String nombre;
+		private String zona; //zona del parque de atracciones a la que pertenece la atracción
+		private boolean tieneAccesoMR; //indica si la atracción tiene un acceso especial para personas con movilidad reducida
+
+		public Atraccion(String nombre, String zona, boolean tieneAccesoMR) {
+		    this.nombre = nombre;
+		    this.zona = zona;
+		    this.tieneAccesoMR = tieneAccesoMR;
+		}
+
+		public String getNombre() {
+		    return nombre;
+		}
+
+		public void setNombre(String nombre) {
+		    this.nombre = nombre;
+		}
+
+		public float getZona() {
+		    return zona;
+		}
+
+		public void setZona(String zona) {
+		    this.zona = zona;
+		}
+		
+		public boolean isTieneAccesoMR(){
+		   return tieneAccesoMR;   
+		}
+		
+		public void setTieneAccesoMR(boolean tieneAccesoMR) {
+			this.tieneAccesoMR = tieneAccesoMR;
+		}
+		
+		//TODO
+		public static void tieneAccesoMR() throws ExcepcionAtraccion {
+			
+		} 
+	}
+```
+
+- [61\. Colecciones · List · Ejercicio 0001]()
+  - 
+
+- [61\. Colecciones · List · Ejercicio 0002]()
+  - 
+
+- [61\. Colecciones · List · Ejercicio 0003]()
+  - 
+
+* * *
+
+## Interfaces gráficas de usuario. Flujos y ficheros.
+
+### 62. Interfaces gráficas de usuario. Swing.
+
+- [62\. Swing · Ejercicio 0001]()
+  - 
+
+- [62\. Swing · Ejercicio 0002]()
+  - 
+
+- [62\. Swing · Ejercicio 0003]()
+  - 
+
+- [62\. Swing · Ejercicio 0004]()
+  - 
+
+- [62\. Swing · Ejercicio 0005]()
+  - 
+
+- [62\. Swing · Ejercicio 0006]()
+  - 
+
+- [62\. Swing · Ejercicio 0007]()
+  - 
+
+- [62\. Swing · Ejercicio 0008]()
+  - 
+
+- [62\. Swing · Ejercicio 0009]()
+  - 
+
+- [62\. Swing · Ejercicio 0010]()
+  - 
+
+### 63. Flujos y ficheros.
+
+- 63\.
+
+* * *
+
 ## OOP. Introducción a la persistencia en BD
 
 ### 64\. Introducción al diagrama estático UML
@@ -7,6 +360,22 @@
 ### 65\. Aplicaciones con BD no orientadas a objetos
 
 - 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0001
+  - Objetivos:
+    - Establecer la conexión con la base de datos.
+    - Mostrar los nombres de las atracciones de una zona determinada de un parque de atracciones con acceso para personas con movilidad reducida.
+    - La tabla de atracciones de la base de datos ParqueAtracciones tiene la siguiente definición:
+```SQL
+	CREATE TABLE atracciones(
+		nombre VARCHAR(20) NOT NULL,
+		zona VARCHAR(20) NOT NULL,
+		tieneAcceso SMALLINT NOT NULL,
+		PRIMARY KEY (nombre)
+		);
+```
+  - Para conseguir los objetivos pedidos, completar el código de la clase ParqueAtracciones según lo que indican los comentarios "TODO".
+```Java
+
+```
 - 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0002
 - 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0003
 - 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0004
