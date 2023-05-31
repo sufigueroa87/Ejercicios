@@ -2,7 +2,7 @@
 
 ### 58. Fundamentos de la programación orientada a objetos.
 
-- 58\. [Fundamentos de la POO · Ejercicio 0001]()
+- [58\. Fundamentos de la POO · Ejercicio 0001]()
   - Relacionar las preguntas siguientes, relativas al proceso de descomposición en objetos de un partido de futbol de primera división, con las respuestas correctas:
     - Cuántos objetos jugador hay?
     - Puede variar el nombre de objetos jugador?
@@ -11,10 +11,10 @@
     - Y si dos jugadores se pueden cambiar la camiseta entre ellos?
     - Tiene sentido que un objeto árbitro tenga una operación recibirTarjeta?
 
-- 58\. [Fundamentos de la POO · Ejercicio 0002]()
+- [58\. Fundamentos de la POO · Ejercicio 0002]()
   - Descompón en objetos el juego del Pacman. Usa nombres descriptivos para los objetos.
 
-- 58\. [Fundamentos de la POO · Ejercicio 0003]()
+- [58\. Fundamentos de la POO · Ejercicio 0003]()
   - Descompón el juego de los barcos.
   - En el juego de los barcos pueden participar 2 jugadores.
   - Cada jugador tiene 2 tableros, que solo él puede ver (el contrincante no).
@@ -26,15 +26,15 @@
     - Dos destructores, que ocupan 3 casillas.
     - Tres fragatas, que ocupan 2 casillas.
     - Cuatro submarinos, que ocupan 1 casilla.
-- La única restricción es que no se pueden ubicar barcos en diagonal (solo horizontal y verticalmente).
-- Por turnos, cada jugador dice la coordenada asociada a una casilla. El contrincante mira su tablero y responde "agua" si en esta casilla no hay ningún barco, o "tocado" si hay una parte del barco, o "tocado y hundido" si es la última casilla para que un barco esté tocado por todas las casillas.
-- Gana quien logra hundir todos los barcos del contrincante.
-- Enumera todos los objetos que componen una partida en curso, suponiendo que los diferentes jugadores ya han hubicado los barcos en los tableros respectivos, de acuerdo con la metodología de orientación a objetos.
-- Indicar algún atributo de los objetos identificados.
+  - La única restricción es que no se pueden ubicar barcos en diagonal (solo horizontal y verticalmente).
+  - Por turnos, cada jugador dice la coordenada asociada a una casilla. El contrincante mira su tablero y responde "agua" si en esta casilla no hay ningún barco, o "tocado" si hay una parte del barco, o "tocado y hundido" si es la última casilla para que un barco esté tocado por todas las casillas.
+  - Gana quien logra hundir todos los barcos del contrincante.
+  - Enumera todos los objetos que componen una partida en curso, suponiendo que los diferentes jugadores ya han hubicado los barcos en los tableros respectivos, de acuerdo con la metodología de orientación a objetos.
+  - Indicar algún atributo de los objetos identificados.
   
 ### 59. Declaración de clases.
 
-- 59\. 
+- [59\.]() 
 
 * * *
 
@@ -105,19 +105,19 @@
 	}
 ```
 
-- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0003
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0003]()
 
-- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0004
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0004]()
 
-- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0005
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0005]()
 
-- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0006
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0006]()
 
-- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0007
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0007]()
 
-- 60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0008
+- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0008]()
 
-- 60\. Interfaces · Ejercicio 0001
+- [60\. Interfaces · Ejercicio 0001]()
   - Tenemos la siguiente interfaz Matricula.
   - Implementarla en la clase Barco, teniendo en cuenta que el método matricular() tiene que pedir al usuario que introduzca la matrícula del barco que devolverá el método.
 ```Java
@@ -126,7 +126,7 @@
 	}
 ```
 
-- 60\. Interfaces · Ejercicio 0002
+- [60\. Interfaces · Ejercicio 0002]()
   - Tenemos la siguiente interfaz Intensidad.
   - Implementarla en la clase de la jerarquía formada por la superclase Atraccion , que contiene subclases como la clase Adulto.
   - El método esFuerte() se tiene que pedir al usuario si la atracción es de intensidad fuerte o no.
@@ -301,13 +301,10 @@
 ```
 
 - [61\. Colecciones · List · Ejercicio 0001]()
-  - 
 
 - [61\. Colecciones · List · Ejercicio 0002]()
-  - 
 
 - [61\. Colecciones · List · Ejercicio 0003]()
-  - 
 
 * * *
 
@@ -316,38 +313,28 @@
 ### 62. Interfaces gráficas de usuario. Swing.
 
 - [62\. Swing · Ejercicio 0001]()
-  - 
 
 - [62\. Swing · Ejercicio 0002]()
-  - 
 
 - [62\. Swing · Ejercicio 0003]()
-  - 
 
 - [62\. Swing · Ejercicio 0004]()
-  - 
 
 - [62\. Swing · Ejercicio 0005]()
-  - 
 
 - [62\. Swing · Ejercicio 0006]()
-  - 
 
 - [62\. Swing · Ejercicio 0007]()
-  - 
 
 - [62\. Swing · Ejercicio 0008]()
-  - 
 
-- [62\. Swing · Ejercicio 0009]()
-  - 
+- [62\. Swing · Ejercicio 0009]() 
 
 - [62\. Swing · Ejercicio 0010]()
-  - 
 
 ### 63. Flujos y ficheros.
 
-- 63\.
+- [63\.]()
 
 * * *
 
@@ -359,7 +346,7 @@
 
 ### 65\. Aplicaciones con BD no orientadas a objetos
 
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0001
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0001]()
   - Objetivos:
     - Establecer la conexión con la base de datos.
     - Mostrar los nombres de las atracciones de una zona determinada de un parque de atracciones con acceso para personas con movilidad reducida.
@@ -376,19 +363,19 @@
 ```Java
 
 ```
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0002
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0003
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0004
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0005
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0006
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0007
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0008
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0009
-- 65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0010
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0002]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0003]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0004]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0005]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0006]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0007]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0008]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0009]()
+- [65\. Persistencia · Netbeans 17 + JDBC + Java 11JDK + Apache Derby 10.11.1.1 · Ejercicio 0010]()
 
 ### 66\. Aplicaciones con BD orientadas a objetos
 
-- 66\. 
+- [66\.]() 
 
 * * *
 
@@ -396,7 +383,7 @@
 
 ### 67\. Desarrollo del programario
 
-- 67\. 
+- [67\.]/( 
 
 ### 68\. Instalación y uso de entornos de desarrollo
 
