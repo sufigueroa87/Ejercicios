@@ -334,9 +334,10 @@
 
   - En cualquiera de los métodos anteriores cuando se lance la excepción ColorRGB no se tratará, solo se propagará.
    
-![61. Excepciones · Ejercicio 0004](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004.png)
-
-![61. Excepciones · Ejercicio 0004 · b](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004%20%C2%B7%20b.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004.png">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004%20%C2%B7%20b.png">
+</p>
 
 - [61\. Colecciones · List · Ejercicio 0001]()
 
@@ -488,9 +489,7 @@
     - Volver a iniciar la configuración de los parámetros del cálculo.
     - Habilitar campos y botones de la parte superior posibilitando la opción de reintroducir valores en la parte superior.
     - Se inhabilitará y se borrará el contenido de los campos y botones de la parte de en medio.
-<p align="center">
-  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200001.jpg">
-</p>
+
 
 - [68\. Interfaz gráfica · WindowBuilder Pro · Componentes SWT · Eclipse · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/68.%20Interfaz%20gr%C3%A1fica%20%C2%B7%20WindowBuilder%20Pro%20%C2%B7%20Componentes%20SWT%20%C2%B7%20Eclipse%20%C2%B7%20Ejercicio%200002) IOC
   - En Eclipse, crea una aplicación de escritorio independiente en Java con la interfaz gráfica que simule el cálculo del precio de una mensualidad de una hipoteca.
