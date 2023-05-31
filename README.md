@@ -300,7 +300,7 @@
 	}
 ```
 
-- [61\. Excepciones · Ejercicio 0003]() INS Esteve Terradas i Illa
+- [61\. Excepciones · Ejercicio 0003](https://github.com/sufigueroa87/Ejercicios/tree/main/61.%20Excepciones%20%C2%B7%20Ejercicio%200003) INS Esteve Terradas i Illa
   - Se pretende desarrollar una aplicación que simule el funcionamiento de un cajero automático.
   - Crea una clase que se llame cuenta que gestione las operaciones sobre la cuenta.
   - Además de los constructores y campos que se necesiten, la clase contará con los siguientes métodos:
