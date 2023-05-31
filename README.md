@@ -330,13 +330,13 @@
 
 ![61. Excepciones · Ejercicio 0004](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004.png)
 
-  - Para evitar un posible error en el momento de introducir valores RGB crearemos una excepción ColorRGBException.
-  - El mensaje de la excepción tiene que decir de forma clara qué valores son válidos. Por ejemplo, si se intenta crear un objeto ColorRGB con los valores (500, 10, -50) el mensaje deberá de ser: Valor R = 350 fuera de rango. Valor B = -50 fuera de rango.
-  - Una vez tengas implementada la clase ColorRGB y ColorRGBException será necesario implementar la clase Pixel.
+   - Para evitar un posible error en el momento de introducir valores RGB crearemos una excepción ColorRGBException.
+   - El mensaje de la excepción tiene que decir de forma clara qué valores son válidos. Por ejemplo, si se intenta crear un objeto ColorRGB con los valores (500, 10, -50) el mensaje deberá de ser: Valor R = 350 fuera de rango. Valor B = -50 fuera de rango.
+   - Una vez tengas implementada la clase ColorRGB y ColorRGBException será necesario implementar la clase Pixel.
 
 ![61. Excepciones · Ejercicio 0004 · b](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004%20%C2%B7%20b.png)
 
-  - En cualquiera de los métodos anteriores cuando se lance la excepción ColorRGB no se tratará, solo se propagará.
+   - En cualquiera de los métodos anteriores cuando se lance la excepción ColorRGB no se tratará, solo se propagará.
 
 - [61\. Colecciones · List · Ejercicio 0001]()
 
