@@ -320,7 +320,7 @@
   - Por último, haz las modificaciones necesarias para añadir un mecanismo de excepciones para tratar la situación de saldo insuficiente.
   - Si se quiere sacar más dinero que el saldo disponible, lanzaremos una excepción personalizada SaldoInsuficienteException. Se tendrá que capturar en el main.
 
-- [61\. Excepciones · Ejercicio 0004]() INS Esteve Terradas i Illa
+- [61\. Excepciones · Ejercicio 0004](https://github.com/sufigueroa87/Ejercicios/tree/main/61.%20Excepciones%20%C2%B7%20Ejercicio%200004) INS Esteve Terradas i Illa
   - Implementaremos las clases necesarias para guardar un píxel.
   - La información a guardar será la posición en la pantalla y su color en formato RGB.
   - La descripción RGB de un color hace referencia a la composición del color en términos de la intensidad de los colores primarios con el que se forma.
