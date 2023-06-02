@@ -34,7 +34,29 @@
   
 ### 59. Declaración de clases.
 
-- [59\.]() 
+- [59\. Declaración de clases · Ejercicio 0001]() INS Esteve Terradas i Illa
+  - Queremos hacer un programa que nos muestre un menú por pantalla.
+  - En el caso 1:
+    - Pedirá 2 números.
+    - Mostrará la suma por pantalla y se esperará a que se aprete alguna tecla.
+    - Cuando se haya apretado cualquier tecla, volverá al menú borrando la pantalla.
+  - En el caso 2:
+    - Pedirá 2 números.
+    - Mostrará el resto por pantalla y se esperará a que se aprete alguna tecla.
+    - Cuando se haya apretado cualquier tecla, volverá al menú borrando la pantalla.
+  - En el caso 3:
+    - Pedirá 2 números.
+    - Mostrará el producto por pantalla y esperará a que se aprete alguna tecla.
+    - Cuando se haya apretado cualquier tecla, volverá al menú borrando la pantalla.
+  - En el caso 4:
+    - Pedirá 2 números. Si el segundo número es 0, printará un mensaje de error. En caso contrario, mostrará la división por pantalla y esperará a que se aprete alguna tecla.
+    - Cuando se haya apretado cualquier tecla, volverá al menú borrando la pantalla.
+  - En el caso 0:
+    - El programa finaliza.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200001.png">
+</p>
 
 * * *
 
@@ -338,6 +360,9 @@
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004.png">
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004%20%C2%B7%20b.png">
 </p>
+
+- [61\. Excepciones · Ejercicio 0005]() INS Esteve Terradas i Illa
+  - 
 
 - [61\. Colecciones · List · Ejercicio 0001]()
 
