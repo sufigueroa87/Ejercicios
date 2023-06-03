@@ -31,6 +31,34 @@
   - Gana quien logra hundir todos los barcos del contrincante.
   - Enumera todos los objetos que componen una partida en curso, suponiendo que los diferentes jugadores ya han hubicado los barcos en los tableros respectivos, de acuerdo con la metodología de orientación a objetos.
   - Indicar algún atributo de los objetos identificados.
+
+- [58\. Fundamentos de la POO · Ejercicio 0004](https://github.com/sufigueroa87/Ejercicios/tree/main/58.%20Fundamentos%20de%20la%20POO%20%C2%B7%20Ejercicio%200004) INS Esteve Terradas i Illa
+  - Algoritmo que visualice la cuenta de números que son múltiples de 2 o de 3 que hay entre 1 y 100.
+
+- [58\. Fundamentos de la POO · Ejercicio 0005](https://github.com/sufigueroa87/Ejercicios/tree/main/58.%20Fundamentos%20de%20la%20POO%20%C2%B7%20Ejercicio%200005) INS Esteve Terradas i Illa
+  - Dada una secuencia de números leídos por teclado, que acabe con un -1: por ejemplo:
+    - 5,3,0,2,4,4,0,0,2,3,6,0,......,-1;
+  - Realiza el algoritmo que calcule la media aritmética. Supongamos que el usuario no insertará números negativos.
+
+- [58\. Fundamentos de la POO · Ejercicio 0006]() INS Esteve Terradas i Illa
+  - Algoritmo que lea números enteros hasta teclear 0, que nos muestre:
+    - Máximo.
+    - Mínimo.
+    - Media de todos ellos.
+
+- [58\. Fundamentos de la POO · Ejercicio 0007]() INS Esteve Terradas i Illa
+  - Teniendo en cuenta que la llave es "eureka", escribir un algoritmo que nos pida una llave.
+  - Solo tenemos 3 intentos para acertar.
+  - Si fallamos los 3 intentos nos mostrará un mensaje indicándonos que hemos gastado los 3 intentos.
+  - Si acertamos la llave, saldremos directamente del programa.
+
+- [58\. Fundamentos de la POO · Ejercicio 0008]() INS Esteve Terradas i Illa
+  - Leer 3 números que denoten una fecha (dia, mes, año).
+  - Comprobar que es una fecha válida.
+  - Si no es una fecha válida, escribir un mensaje de error.
+  - Si es una fecha válida, escribir la fecha cambiando el número del mes por su nombre.
+  - Ejemplo: 1 2 2006 -> Se tendrá que imprimir "1 de Febrero de 2006".
+  - El año tiene que ser mayor a 0.
   
 ### 59. Declaración de clases.
 
@@ -57,6 +85,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200001.png">
 </p>
+
 
 * * *
 
