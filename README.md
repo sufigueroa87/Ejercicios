@@ -320,13 +320,48 @@
   - Haz un programa como el del ejercicio anterior capaz de trabajar con los distintos tipos de vehículos.
 
 - [60\. Herencia · Ejercicio 0004]() INS Esteve Terradas i Illa
-  - 
+  - Una inmobiliaria vende 2 tipos de inmuebles:
+    - Pisos
+    - Locales
+  - Para cualquier tipo de inmueble, se conoce:
+    - La dirección
+    - El número de metros cuadrados
+  - Para los pisos se tendrá que conocer el piso concreto en el que se encuentra la vivienda.
+  - Para los locales, se importará el número de ventanas que tenga.
+  - Cualquier de estos inmuebles puede ser nuevo o de segunda mano.
+  - El precio de cada inmueble se calcula a partir de un precio base y de una serie de características:
+    - Si tiene menos de 15 años, el precio se rebajará un 1%.
+    - Si tiene más de 15 años, el precio se rebajarà un 2%.
+  - En el caso de los pisos, si es un tercero o más, su precio se incrementará en un 3%.
+  - Para los locales:
+    - Si tienen más de 50 metros cuadrados, su precio se incrementará un 1%.
+    - Si tienen 1 o ningún ventanal, su precio se reduce en un 2%.
+    - Si tienen más de 4 ventanas, su precio aumentará un 2%.
 
 - [60\. Herencia · Ejercicio 0005]() INS Esteve Terradas i Illa
-  - 
+  - Un centro cultural se dedica al alquiler de 2 tipos de materiales:
+    - Discos
+    - Libros
+  - Para los 2 materiales guarda información general:
+    - Código identificativo
+    - Título
+    - Autor
+  - En el caso de los libros, almacenan también su número de páginas.
+  - Para los discos, almacenan el nombre de la discográfica.
 
 - [60\. Herencia · Ejercicio 0006]() INS Esteve Terradas i Illa
-  - 
+  - Se trata de crear una librería de clases que represente:
+    - Figuras geométricas tridimensionales (cubo y cilindro) y su respectiva gerarquía de clases.
+    - Figuras geométricas bidimensionales (rectángulo y círculo) y su respectiva gerarquía de clases.
+    - De las figuras bidimensional se quiere calcular:
+      - El área y el perímetro.
+    - De las figuras tridimensionales, se quiere calcular:
+      - El área y el volumen.
+  - Para modelar este problema necesitas saber:
+    - Cubo: lado
+    - Cilindro: radio y altura
+    - Rectángulo: ancho y altura
+    - Círculo: radio
 
 - [60\. Herencia · Ejercicio 0007]() INS Esteve Terradas i Illa
   - 
