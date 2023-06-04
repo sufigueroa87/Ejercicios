@@ -86,7 +86,7 @@
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200001.png">
 </p>
 
-- [59\. Declaración de clases · Ejercicio 0002]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200002) INS Esteve Terradas i Illa
   - Crea una clase llamada Electrodomestico, con las siguientes características:
     - Sus atributos son precio base, color, consumo energético (con las letras entre la A y la F) y peso. Indica que se podrán heredar.
     - Por defecto, el color será blanco, el consumo energético será F, el precio base es de 100 euros y el peso de 5Kg. Usa constantes para esto.
@@ -105,7 +105,7 @@
   <img src=https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200002.jpg>
 </p>
 
-- [59\. Declaración de clases · Ejercicio 0003]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0003](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200003) INS Esteve Terradas i Illa
   - Crea una clase llamada Serie con las siguientes características:
     - Sus atributos son título, número de temporadas, entregado, género y creador.
     - Por defecto, el nombre de temporadas es de 3 temporadas y entregado false. El resto de atributos serán valores por defecto según el tipo de atributo.
@@ -118,7 +118,7 @@
     - Métodos set de todos los atributos, excepto entregado.
     - Sobreescribir los métodos toString. 
 
-- [59\. Declaración de clases · Ejercicio 0004]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0004](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200004) INS Esteve Terradas i Illa
   - Crea una clase Libro que contenga los atributos siguientes :
     - ISBN
     - Título
@@ -130,7 +130,7 @@
   - En el fichero main, crear 2 objetos Libro (con los valores que se quieran) y mostrarlos por pantalla.
   - Finalmente, indicar qué libro de los dos creados tiene más páginas.
 
-- [59\. Declaración de clases · Ejercicio 0005]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0005](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200005) INS Esteve Terradas i Illa
   - Realizaremos una clase llamada Raices, donde representaremos los valores de una ecuación de segundo grado.
   - Tendremos los 3 coeficientes como atributos, llamados a, b y c.
   - Necesitamos insertar estos 3 valores para construir el objeto.
