@@ -86,6 +86,161 @@
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200001.png">
 </p>
 
+- [59\. Declaración de clases · Ejercicio 0002]() INS Esteve Terradas i Illa
+  - Crea una clase llamada Electrodomestico, con las siguientes características:
+    - Sus atributos son precio base, color, consumo energético (con las letras entre la A y la F) y peso. Indica que se podrán heredar.
+    - Por defecto, el color será blanco, el consumo energético será F, el precio base es de 100 euros y el peso de 5Kg. Usa constantes para esto.
+    - Los colores disponibles son blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o minúsculas.
+  - Los constructores a implementar son:
+    - Un constructor por defecto
+    - Un constructor con el precio y el peso. La resta por defecto.
+    - Un constructor con todos los atributos.
+  - Los métodos que se implementarán serán:
+    - Métodos getters de todos los atributos.
+    - comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta, si no es correcta utiliza la letra por defecto. Se invocará en crear el objeto y no será visible.
+    - comprobarColor(String color): comprueba que el color es correcto, si no lo es utiliza el color por defecto. Se invocará en crear el objeto y no será visible.
+    - precioFinal(): según el consumo energético, aumentará su precio, y según su medida, también. 
+
+<p align="center">
+  <img src=https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200002.jpg>
+</p>
+
+- [59\. Declaración de clases · Ejercicio 0003]() INS Esteve Terradas i Illa
+  - Crea una clase llamada Serie con las siguientes características:
+    - Sus atributos son título, número de temporadas, entregado, género y creador.
+    - Por defecto, el nombre de temporadas es de 3 temporadas y entregado false. El resto de atributos serán valores por defecto según el tipo de atributo.
+  - Los constructores que se implementarán serán:
+    - Un constructor por defecto.
+    - Un constructor con el título del creador. La resta por defecto.
+    - Un constructor con todos los atributos, excepto entregado.
+  - Los métodos que se implementarán serán:
+    - Métodos get de todos los atributos, excepto entregado.
+    - Métodos set de todos los atributos, excepto entregado.
+    - Sobreescribir los métodos toString. 
+
+- [59\. Declaración de clases · Ejercicio 0004]() INS Esteve Terradas i Illa
+  - Crea una clase Libro que contenga los atributos siguientes :
+    - ISBN
+    - Título
+    - Autor
+    - Nombre de páginas
+  - Crea sus métodos get y set que corresponden a cada atributo.
+  - Crea el método toString() para mostrar la información relativa al libro con el formato:
+    - "El libro con ISBN ___ creado por el autor ___ tiene ___ páginas."
+  - En el fichero main, crear 2 objetos Libro (con los valores que se quieran) y mostrarlos por pantalla.
+  - Finalmente, indicar qué libro de los dos creados tiene más páginas.
+
+- [59\. Declaración de clases · Ejercicio 0005]() INS Esteve Terradas i Illa
+  - Realizaremos una clase llamada Raices, donde representaremos los valores de una ecuación de segundo grado.
+  - Tendremos los 3 coeficientes como atributos, llamados a, b y c.
+  - Necesitamos insertar estos 3 valores para construir el objeto.
+  - Las operaciones que se podrán realizar serán las siguientes:
+    - obtenerRaices(): imprime las 2 posibles soluciones.
+    - obetenrRaiz(): imprime una única raíz, que será cuando solo tenga una solución posible.
+    - getDiscriminante(): devuelve el valor del discriminante (double). El discriminante tiene la fórmula b²-4*a*c.
+    - tieneRaices(): devuelve un boolean indicando si tiene dos soluciones. Para que esto suceda, el discriminante tiene que ser mayor a 0.
+    - tieneRaiz(): devuelve un boolean indicando si tiene una única solución. Para que esto suceda, el discriminante tiene que ser igual a 0.
+    - calcular(): muestra por consola las posibles soluciones que tiene nuestra ecuación, en caso de no existir solución, mostrarlo también.
+  - Fórmula de la ecuación de segundo grado: (-b±√((b^2)-(4*a*c)))/(2*a).
+  - Solo cambia el signo delante de -b.
+
+- [59\. Declaración de clases · Ejercicio 0006]() INS Esteve Terradas i Illa
+  - Crea una clase llamada Cuenta que tendrá los atributos siguientes:
+    - titular
+    - cantidad (puede tener decimales).
+  - El titular será obligatorio.
+  - La cantidad será opcional.
+  - Crea 2 constructores que cumplan esto.
+  - Crea los métodos:
+    - get
+    - set
+    - toString
+  - Tendrá 2 métodos especiales:
+    - ingresar(double cantidad):
+      - Se ingresa una cantidad a la cuenta. Si la cantidad introducida es negativa, no se hará nada.
+    - retirar(double cantidad):
+      - Se retira una cantidad a la cuenta. Si restando la cantidad actual a la que nos pasan es negativo, la cantidad de la cuenta pasará a ser 0.
+
+- [59\. Declaración de clases · Ejercicio 0007]() INS Esteve Terradas i Illa
+  - Haz una clase llamada Persona que siga las condiciones siguientes:
+    - Sus atributos son:
+      - nombre
+      - edad
+      - DNI
+      - sexo(H hombre, M mujer)
+      - peso
+      - altura
+    - Por defecto, todos los atributos menos el DNI serán valores por defecto según el tipo:
+      - 0 números
+      - cadena vacía para String
+      - etc.
+    - Sexo será hombre por defecto, usando una constante para ello.
+    - Se implantarán diversos constructores:
+      - Un constructor por defecto.
+      - Un constructor con:
+        - nombre
+        - edad
+        - sexo
+        - la resta por defecto.
+    - Los métodos que se implantarán son:
+      - Métodos set de cada parámetro, excepto DNI.
+      - calcularIMC():
+        - Calcular si la persona está en su peso ideal (peso en kg/(altura² en m).
+        - Si esta fórmula devuelve un valor menor que 20, la función devuelve -1.
+        - Si esta fórmula devuelve un número entre 20 y 25 (incluídos), significa que está por debajo del peso ideal y la función devolverá 0.
+        - Si esta fórmula devuelve un número mayor a 25, significa que tiene sobrepeso, y la función devuelve 1.
+        - Te recomiendo que uses constantes para estos valores.
+      - esMayorDeEdad():
+        - Indica si es mayor de edad, devuelve un boolean.
+      - comprovarSexo(char sexo):
+        - Comprueva que el sexo introducido es correcto.
+        - Si el sexo no es correcto, será H.
+        - No será visible en el exterior.
+      - toString():
+        - Devuelve toda la información del objeto.
+      - generaDNI():
+        - Genera un número aleatorio de 8 cifras, que genera la letra correspondiente.
+        - Este método será invocado cuando se construya el objeto.
+        - Puedes dividir el método para que sea más sencillo.
+        - No será visible en el exterior.
+  - Crea la clase ejecutable que haga lo siguiente:
+    - Pida por teclado el:
+      - nombre
+      - edad
+      - sexo
+      - peso
+      - altura
+    - Crea 3 objetos de la clase anterior:
+      - 1r objeto: obtendrá las variables que hemos pedido por teclado.
+      - 2o objeto: obtendrá todas las variables anteriores menos el peso y la altura.
+      - 3r objeto: por defecto. Para este último usa los métodos set para dar valores a los atributos.
+    - Para cada objeto, comprovar con un mensaje:
+      - Si está en su peso ideal.
+      - Si tiene sobrepeso.
+      - Si está por debajo de su peso ideal.
+	- Indicar para cada objeto si es mayor de edad.
+	- Mostrar la información de cada objeto.
+
+- [59\. Declaración de clases · Ejercicio 0008]() INS Esteve Terradas i Illa
+  - Crea una clase llamada Banco que contemple los datos:
+    - numeroCuenta
+    - nombreCliente
+    - depósito
+    - saldo
+  - Desarrolla los métodos necesarios para:
+    - Mostrar todos los datos del cliente.
+    - Mostrar el saldo.
+    - Hacer ingresos que aumenten el saldo de la cuenta. Haz también que se muestre el saldo resultante.
+    - Hacer reintegramentos (sacar dinero) que hagan disminuir el saldo. Haz también que se muestre el saldo resultante.
+
+- [59\. Declaración de clases · Ejercicio 0009]() INS Esteve Terradas i Illa
+  - Se quiere implementar el control de un Ferry. Para ello, crearemos una clase Vehiculo que contemple aspectos comunes a todos los vehiculos como:
+    - numeroOcupantes
+    - numeroRuedas
+    - fechaMatriculacion
+    - medioDesplazamiento
+    - etc.
+  - Haz un programa capaz de leer por teclado los datos de 10 vehículos y los liste a continuación por pantalla.
 
 * * *
 
@@ -93,7 +248,7 @@
 
 ### 60. Creación de aplicaciones escalables. Encapsulación. Polimorfismo. Herencia. Interfaces.
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0001]() IOC
+- [60\. Herencia · Ejercicio 0001]() IOC
   - Tenemos la siguiente clase Velero.
   - El retorno del método toString son los valores separados por comas de todos los atributos del objeto de tipo velero que llama al método.
   - Tenemos que implementar la superclase abstracta Barco de la que hereda la clase Velero.
@@ -122,7 +277,7 @@
 	}
 ```
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0002]() IOC
+- [60\. Herencia · Ejercicio 0002]() IOC
   - Tenemos la siguiente clase Adulto.
   - Esta clase está definida por:
     - Su nombre.
@@ -156,17 +311,28 @@
 	}
 ```
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0003]()
+- [60\. Herencia · Ejercicio 0003]() INS Esteve Terradas i Illa
+  - A partir de la clase Vehiculo (el código se muestra a continuación), y mediante la herencia, crear nuevas clases que puedan diferenciar si el objeto es un coche, una moto, un camión, una bici, una lancha.
+  - Inserta en cada clase algún atributo específico para diferenciar una clase de otra.
+  - Por ejemplo, para el coche insertar un booleano que determine si es de 3 o 5 puertas.
+  - Por ejemplo, para el camión la altura (indiferente para el resto de vehículos).
+  - etc.
+  - Haz un programa como el del ejercicio anterior capaz de trabajar con los distintos tipos de vehículos.
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0004]()
+- [60\. Herencia · Ejercicio 0004]() INS Esteve Terradas i Illa
+  - 
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0005]()
+- [60\. Herencia · Ejercicio 0005]() INS Esteve Terradas i Illa
+  - 
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0006]()
+- [60\. Herencia · Ejercicio 0006]() INS Esteve Terradas i Illa
+  - 
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0007]()
+- [60\. Herencia · Ejercicio 0007]() INS Esteve Terradas i Illa
+  - 
 
-- [60\. Encapsulación · Polimorfismo · Herencia · Ejercicio 0008]()
+- [60\. Herencia · Ejercicio 0008]() INS Esteve Terradas i Illa
+  - 
 
 - [60\. Interfaces · Ejercicio 0001]() IOC
   - Tenemos la siguiente interfaz Matricula.
