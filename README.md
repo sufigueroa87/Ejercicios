@@ -160,6 +160,7 @@
       - Se ingresa una cantidad a la cuenta. Si la cantidad introducida es negativa, no se hará nada.
     - retirar(double cantidad):
       - Se retira una cantidad a la cuenta. Si restando la cantidad actual a la que nos pasan es negativo, la cantidad de la cuenta pasará a ser 0.
+  - Si se da el caso que hay que comprovar que el valor introducido por el usuario sea de un tipo de dato concreto, usar regex.
 
 - [59\. Declaración de clases · Ejercicio 0007]() INS Esteve Terradas i Illa
   - Haz una clase llamada Persona que siga las condiciones siguientes:
