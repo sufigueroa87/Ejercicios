@@ -144,7 +144,7 @@
   - Fórmula de la ecuación de segundo grado: (-b±√((b^2)-(4*a*c)))/(2*a).
   - Solo cambia el signo delante de -b.
 
-- [59\. Declaración de clases · Ejercicio 0006]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0006](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200006) INS Esteve Terradas i Illa
   - Crea una clase llamada Cuenta que tendrá los atributos siguientes:
     - titular
     - cantidad (puede tener decimales).
