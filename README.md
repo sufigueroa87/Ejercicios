@@ -162,7 +162,7 @@
       - Se retira una cantidad a la cuenta. Si restando la cantidad actual a la que nos pasan es negativo, la cantidad de la cuenta pasará a ser 0.
   - Si se da el caso que hay que comprovar que el valor introducido por el usuario sea de un tipo de dato concreto, usar regex.
 
-- [59\. Declaración de clases · Ejercicio 0007]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0007](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200007) INS Esteve Terradas i Illa
   - Haz una clase llamada Persona que siga las condiciones siguientes:
     - Sus atributos son:
       - nombre
@@ -184,11 +184,11 @@
         - sexo
         - la resta por defecto.
     - Los métodos que se implantarán son:
-      - Métodos set de cada parámetro, excepto DNI.
+      - Métodos set y get de cada parámetro, excepto DNI.
       - calcularIMC():
         - Calcular si la persona está en su peso ideal (peso en kg/(altura² en m).
         - Si esta fórmula devuelve un valor menor que 20, la función devuelve -1.
-        - Si esta fórmula devuelve un número entre 20 y 25 (incluídos), significa que está por debajo del peso ideal y la función devolverá 0.
+        - Si esta fórmula devuelve un número entre 20 y 25 (incluídos), significa que está en el peso ideal y la función devolverá 0.
         - Si esta fórmula devuelve un número mayor a 25, significa que tiene sobrepeso, y la función devuelve 1.
         - Te recomiendo que uses constantes para estos valores.
       - esMayorDeEdad():
