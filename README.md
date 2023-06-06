@@ -234,7 +234,7 @@
     - Hacer ingresos que aumenten el saldo de la cuenta. Haz también que se muestre el saldo resultante.
     - Hacer reintegramentos (sacar dinero) que hagan disminuir el saldo. Haz también que se muestre el saldo resultante.
 
-- [59\. Declaración de clases · Ejercicio 0009]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0009](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200009) INS Esteve Terradas i Illa
   - Se quiere implementar el control de un Ferry. Para ello, crearemos una clase Vehiculo que contemple aspectos comunes a todos los vehiculos como:
     - numeroOcupantes
     - numeroRuedas
