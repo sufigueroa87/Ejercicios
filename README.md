@@ -222,7 +222,7 @@
 	- Indicar para cada objeto si es mayor de edad.
 	- Mostrar la información de cada objeto.
 
-- [59\. Declaración de clases · Ejercicio 0008]() INS Esteve Terradas i Illa
+- [59\. Declaración de clases · Ejercicio 0008](https://github.com/sufigueroa87/Ejercicios/tree/main/59.%20Declaraci%C3%B3n%20de%20clases%20%C2%B7%20Ejercicio%200008) INS Esteve Terradas i Illa
   - Crea una clase llamada Banco que contemple los datos:
     - numeroCuenta
     - nombreCliente
