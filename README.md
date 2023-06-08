@@ -318,7 +318,153 @@
   - Por ejemplo, para el coche insertar un booleano que determine si es de 3 o 5 puertas.
   - Por ejemplo, para el camión la altura (indiferente para el resto de vehículos).
   - etc.
-  - Haz un programa como el del ejercicio anterior capaz de trabajar con los distintos tipos de vehículos.
+  - Haz un programa que construya 1 objeto de cada una de las subclases de Vehiculo que has creado.
+
+```Java
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Vehiculo {
+
+    Scanner keyboard = new Scanner(System.in);
+
+    private int numeroOcupantes;
+    private int numeroRuedas;
+    private LocalDate fechaMatriculacion;
+    private String color;
+    private String marca;
+    private double precio;
+
+    //constructores
+    public Vehiculo() {
+    }
+
+    public Vehiculo(int numeroOcupantes, int numeroRuedas, LocalDate fechaMatriculacion, String color, String marca, double precio) {
+        this.numeroOcupantes = numeroOcupantes;
+        this.numeroRuedas = numeroRuedas;
+        this.fechaMatriculacion = fechaMatriculacion;
+        this.color = color;
+        this.marca = marca;
+        this.precio = precio;
+    }
+
+    //método crear n vehículos y printarlos por pantalla
+    public void crearNVehiculos(int cantidadVehiculos){
+        ArrayList<Vehiculo> listadoVehiculos = new ArrayList<Vehiculo>();
+        for(int i = 0; i < cantidadVehiculos; i++){
+            //pedir datos
+            System.out.println("INTRODUCE LOS DATOS PARA EL VEHÍCULO " + i + ":");
+            pedirNumeroOcupantes();
+            pedirNumeroRuedas();
+            pedirFechaMatriculacion();
+            pedirColor();
+            pedirMarca();
+            pedirPrecio();
+            Vehiculo v = new Vehiculo(this.numeroOcupantes, this.numeroRuedas, this.fechaMatriculacion, this.color, this.marca, this.precio);
+            System.out.println("Datos introducidos para el vehículo " + i + ": " + toString());
+            listadoVehiculos.add(v);
+            System.out.println("");
+        }
+
+        System.out.println("");
+        System.out.println("LISTADO DE TODOS LOS VEHÍCULOS INTRODUCIDOS: ");
+        for(int i = 0; i < cantidadVehiculos; i++){
+            System.out.println(listadoVehiculos.get(i));
+        }
+    }
+
+    //método pedir número ocupantes
+    public void pedirNumeroOcupantes(){
+        String regex = "[0-9]+";
+        boolean integerEquivocado = true;
+        while(integerEquivocado){
+            System.out.println("Introduce el número de ocupantes del vehículo: ");
+            String numeroOcupantesString = keyboard.nextLine();
+            if (!numeroOcupantesString.matches(regex)) {
+                System.out.println("Valor introducido no es un integer.");
+            } else {
+                this.numeroOcupantes = Integer.parseInt(numeroOcupantesString);
+                integerEquivocado = false;
+            }
+        }
+    }
+
+    //método pedir número de ruedas
+    public void pedirNumeroRuedas(){
+        String regex = "[0-9]+";
+        boolean integerEquivocado = true;
+        while(integerEquivocado){
+            System.out.println("Introduce el número de ruedas del vehículo: ");
+            String numeroRuedasString = keyboard.nextLine();
+            if (!numeroRuedasString.matches(regex)) {
+                System.out.println("Valor introducido no es un integer.");
+            } else {
+                this.numeroRuedas = Integer.parseInt(numeroRuedasString);
+                integerEquivocado = false;
+            }
+        }
+    }
+
+    //método pedir fecha matriculación
+    public void pedirFechaMatriculacion(){
+        String regex = "^\\d{4}-\\d{2}-\\d{2}$";
+        boolean fechaEquivocada = true;
+        while(fechaEquivocada){
+            System.out.println("Introduce la fecha de la matriculación del vehículo:");
+            String fechaMatriculacionString = keyboard.nextLine();
+            if (!fechaMatriculacionString.matches(regex)){
+                System.out.println("Fecha de matriculación errónea.");
+            } else {
+                this.fechaMatriculacion = LocalDate.parse(fechaMatriculacionString);
+                fechaEquivocada = false;
+            }
+        }
+    }
+
+    //método pedir color
+    public void pedirColor(){
+        System.out.println("Introduce el color del vehículo: ");
+        this.color = keyboard.nextLine();
+    }
+
+    //método pedir marca
+    public void pedirMarca(){
+        System.out.println("Introduce la marca del vehículo: ");
+        this.marca = keyboard.nextLine();
+    }
+
+    //método pedir precio
+    public void pedirPrecio(){
+        String regex = "[0-9]{1,13}(\\.[0-9]*)?";
+        boolean doubleEquivocado = true;
+        while(doubleEquivocado){
+            System.out.println("Introduce el precio del vehículo: ");
+            String precioString = keyboard.nextLine();
+            if (!precioString.matches(regex)) {
+                System.out.println("Valor introducido no es un double.");
+            } else {
+                this.precio = Integer.parseInt(precioString);
+                doubleEquivocado = false;
+            }
+        }
+    }
+
+    //mostrar datos del vehículo
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "numeroOcupantes=" + numeroOcupantes +
+                ", numeroRuedas=" + numeroRuedas +
+                ", fechaMatriculacion=" + fechaMatriculacion +
+                ", color='" + color + '\'' +
+                ", marca='" + marca + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
+}
+```
 
 - [60\. Herencia · Ejercicio 0004]() INS Esteve Terradas i Illa
   - Una inmobiliaria vende 2 tipos de inmuebles:
@@ -365,10 +511,75 @@
     - Círculo: radio
 
 - [60\. Herencia · Ejercicio 0007]() INS Esteve Terradas i Illa
-  - 
+  - Nos piden hacer un programa que gestione empleados.
+  - Los empleados se definen por tener:
+    - Nombre
+    - Edad
+    - Salario
+    - Dni
+    - Sexo
+  - También tendremos una constante llamada PLUS, que tendrá un valor de 200 euros.
+  - Tenemos 2 tipos de trabajadores: asistente y comercial.
+    - El comercial, además de los atributos anteriores, tiene uno más llamado comisión (double).
+    - El asistente, además de los atributos de empleado, tiene la región (String) y el número de personas atendidas (int).
+  - Crea sus constructores, getters y setters y toString (piensa en aprovechar la herencia).
+  - Las clases tendrán un método llamado plus, que según cada clase tendrá una implementación distinta. Este plus aumenta básicamente el salario del empleado.
+  - El comercial, si tiene más de 30 años y cobra una comisión de más de 500 euros, se le aplicará el plus.
+  - El asistente, si tiene menos de 25 años, si es mujer y si reparte en la "región 3", recibirá un plus.
+  - Crea una clase ejecutable donde crearás un array de empleados. Crea distintos tipos de empleados en el array. Imprime por pantalla el siguiente informe:
+    - a) Número de mujeres en la empresa.
+    - b) Número de hombres que cobran más de 1000 euros.
+    - c) Número de asistentes que son mujeres.
+    - d) Muestra todos los comerciales.
 
 - [60\. Herencia · Ejercicio 0008]() INS Esteve Terradas i Illa
-  - 
+  - Partiendo de la clase electrodoméstico que se muestra a continuación, sabemos que una lavadora es un electrodoméstico, por tanto, crearemos una subclase llamada Lavadora con las siguientes características:
+  - Su atributo es carga, además de los heredados. Por defecto, la carga es de 5Kg. Usa una constante para esto.
+  - Los constructores que se implementarán serán:
+    - Un constructor por defecto.
+    - Un constructor con el precio y el peso. El resto por defecto.
+    - Un constructor con la carga y otros atributos heredados. Recuerda que tienes que llamar al constructor de la clase padre.
+  - Los métodos que se implementarán serán:
+    - Método get de carga.
+    - precioFinal(): si tiene una carga más grande de 40Kg, aumentará su precio 50 euros, si no es así no incrementará el precio. Haz una llamada al método padre y añade el código necesario. Recuerda que las condiciones de la clase Electrodomestico también afectarán al precio.
+  - **5.2. CREACIÓN DE LA SUBCLASE Televisor:**
+  - Un televisor, es un Electrodoméstico, por tanto, crearemos una subclase llamada Televisor con las siguientes características:
+  - Sus atributos son: resolución(en pulgadas), sintonizador TDT(boolean), además de los atributos heredados. Por defecto, la resolución será de 20 pulgadas y el sintonizador será false.
+  - Los constructores que se implementarán serán:
+    - Un constructor por defecto.
+    - Un constructor con el precio y el peso. El resto por defecto.
+    - Un constructor con resolución, sintonizador TDT y la resta de atributos heredados. Recuerda que tienes que llamar al constructor de la clase padre.
+  - Los métodos que se implementarán serán:
+    - Método get de resolución y sintonizador TDT.
+    - precioFinal(): si tiene una resolución más grande de 40 pulgadas, se incrementará el precio en un 30% y si tiene un sintonizador TDT incorporado, aumentará 50 euros. Recuerda que las condiciones de la clase Electrodoméstico también afectan al precio.
+  - **5.3. CREACIÓN DE LA CLASE Ejecutable:**
+  - Ahora crea una clase Ejecutable que haga lo siguiente:
+    - Crea un array de Electrodomésticos de 10 posiciones.
+    - Asigna a cada posición un objeto de las clases anteriores con los valores que quieras.
+    - Ahora, recorre este array y ejecuta el método precioFinal().
+    - Tendrás que mostrar el precio de cada clase, es decir, el precio de todas las televisiones por un lado, de todas las lavadoras por otra y la suma de los electrodomésticos (puedes crear objetos Electrodoméstico, pero recuerda que Television y Lavadora también son electrodomésticos). Recuerda usar el operador instanceOf. Por ejemplo, si tenemos un electrodoméstico con un precio final de 300, una lavadora de 200 y una televisión de 500, el resultado final será de 1000 (300+200+500) para electrodomésticos, 200 para lavadora y 500 para televisión.
+
+- [60\. Herencia · Ejercicio 0009]() INS Esteve Terradas i Illa
+  - Nos piden que gestionemos un conjunto de productos.
+  - Los productos tienen los atributos siguientes:
+    - Nombre
+    - Precio
+    - Código: Formado por una letra y un número.
+  - Tenemos 2 tipos de productos:
+    - Segunda mano: tiene un atributo llamado antigüedad. Representa los años que tiene el producto.
+    - Nuevo: tiene un atributo llamado tipo. Este atributo puede tener los valores: mueble, jardinería, ropa o electrodoméstico.
+  - Crea los constructores, getters, setters y toString.
+  - Tendremos una función llamada calcularPrecio que recibe un número indicando la cantidad de productos.
+  - El precio de cualquier producto se calcula multiplicándolo por la cantidad de productos, pero si el producto es de seunga mano, el precio del producto va en función de la antigüedad:
+    - En la clase Nuevo, este método solo calcula el precio final que consiste en multiplicar la cantidad por el precio.
+    - En la clase SegundaMano, además, el precio del producto se reducirá según los años:
+      - Si tiene menos de 1 año, se reducirá en un 20% el precio final.
+      - Si tiene entre 2 y 5 años, se reducirá en un 30% el precio final.
+      - Si tiene más de 5 años, se reducirá a la mitad del precio final.
+  - Crearemos una clase principal, que tendrá un array de productos. Inseriremos productos de los diferentes tipos y mostraremos:
+    - a) La información del producto más caro.
+    - b) La información del producto más antiguo.
+    - c) Todos los productos nuevos que sean muebles y que tengan un precio superior a 200 euros.
 
 - [60\. Interfaces · Ejercicio 0001]() IOC
   - Tenemos la siguiente interfaz Matricula.
