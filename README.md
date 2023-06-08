@@ -542,7 +542,7 @@ public class Vehiculo {
   - Los métodos que se implementarán serán:
     - Método get de carga.
     - precioFinal(): si tiene una carga más grande de 40Kg, aumentará su precio 50 euros, si no es así no incrementará el precio. Haz una llamada al método padre y añade el código necesario. Recuerda que las condiciones de la clase Electrodomestico también afectarán al precio.
-  - **5.2. CREACIÓN DE LA SUBCLASE Televisor:**
+  - **a) CREACIÓN DE LA SUBCLASE Televisor:**
   - Un televisor, es un Electrodoméstico, por tanto, crearemos una subclase llamada Televisor con las siguientes características:
   - Sus atributos son: resolución(en pulgadas), sintonizador TDT(boolean), además de los atributos heredados. Por defecto, la resolución será de 20 pulgadas y el sintonizador será false.
   - Los constructores que se implementarán serán:
@@ -552,7 +552,7 @@ public class Vehiculo {
   - Los métodos que se implementarán serán:
     - Método get de resolución y sintonizador TDT.
     - precioFinal(): si tiene una resolución más grande de 40 pulgadas, se incrementará el precio en un 30% y si tiene un sintonizador TDT incorporado, aumentará 50 euros. Recuerda que las condiciones de la clase Electrodoméstico también afectan al precio.
-  - **5.3. CREACIÓN DE LA CLASE Ejecutable:**
+  - **b) CREACIÓN DE LA CLASE Ejecutable:**
   - Ahora crea una clase Ejecutable que haga lo siguiente:
     - Crea un array de Electrodomésticos de 10 posiciones.
     - Asigna a cada posición un objeto de las clases anteriores con los valores que quieras.
@@ -580,17 +580,79 @@ public class Vehiculo {
     - a) La información del producto más caro.
     - b) La información del producto más antiguo.
     - c) Todos los productos nuevos que sean muebles y que tengan un precio superior a 200 euros.
+   
+- [60\. Herencia · Ejercicio 0010]() IOC
+  - Crea una jerarquía implementando la subclase Fruta.
+  - La subclase Fruta hereda de la superclase Producto.
+  - La clase Fruta tiene un atributo propio llamado temporada de tipo String, que incica en qué temporada se comercializa esta fruta:
+    - Verano
+    - Otoño
+    - Invierno
+    - Primavera
+  - Esta jerarquía de clases tiene que implementar el método constructor para inicializar todos los atributos con los valores pasados por parámetro y todos los métodos accesores (getters y setters) de sus atributos.
+  - El método imprimirProducto() tiene que imprimir el valor de todos los atributos de la clase Fruta.
+  - Tenemos que tener presente el concepto de reutilización de código en Java.
 
-- [60\. Interfaces · Ejercicio 0001]() IOC
+```Java
+	public abstract class Producto {
+
+	    private String nombre;
+	    private String seccion; //Sección del supermercado a la que corresponde el producto.
+	    private double precio;
+
+	    public Producto(String nombre, String seccion, double precio) {
+		this.nombre = nombre;
+		this.seccion = seccion;
+		this.precio = precio;
+	    }
+
+	    //getters
+	    public String getNombre() {
+		return nombre;
+	    }
+
+	    public String getSeccion() {
+		return seccion;
+	    }
+
+	    public double getPrecio() {
+		return precio;
+	    }
+
+	    //setters
+	    public void setNombre(String nombre) {
+		this.nombre = nombre;
+	    }
+
+	    public void setSeccion(String seccion) {
+		this.seccion = seccion;
+	    }
+
+	    public void setPrecio(double precio) {
+		this.precio = precio;
+	    }
+
+	    //toString()
+	    @Override
+	    public void toString() {
+		System.out.println("Nombre: " + nombre);
+		System.out.println("Sección: " + seccion);
+		System.out.println("Precio: " + precio);
+	    }
+	}
+```
+
+- [60\. Interfaces · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Interfaces%20%C2%B7%20Ejercicio%200001) IOC
   - Tenemos la siguiente interfaz Matricula.
   - Implementarla en la clase Barco, teniendo en cuenta que el método matricular() tiene que pedir al usuario que introduzca la matrícula del barco que devolverá el método.
+  - Obtener la superclase abstracta Barco y la subclase Velero [aquí](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200001).
 ```Java
 	public interface Matricula {
 		public String matricular();
 	}
 ```
 
-- [60\. Interfaces · Ejercicio 0002]() IOC
+- [60\. Interfaces · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Interfaces%20%C2%B7%20Ejercicio%200002) IOC
   - Tenemos la siguiente interfaz Intensidad.
   - Implementarla en la clase de la jerarquía formada por la superclase Atraccion , que contiene subclases como la clase Adulto.
   - El método esFuerte() se tiene que pedir al usuario si la atracción es de intensidad fuerte o no.
@@ -598,11 +660,16 @@ public class Vehiculo {
   - Si el valor introducido es 0, se le asignará el valor falso.
   - No tenéis que controlar si el usuario introduce un valor diferente de 1 o 0, supondremos que siempre se introduce 1 o 0.
   - Para decidir en qué clase hay que implementar la interfaz, en la clase Atraccion o en la clase Adulto, tenéis que tener en cuenta que la intensidad solo es de las atracciones para adultos.
+  - Obtener la superclase abstracta Atraccion y la subclase Adulto [aquí](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200002).
+
 ```Java
 	public interface Intensidad {
 		public void esFuerte();
 	}
 ```
+
+- [60\. Interfaces · Ejercicio 0003]() IOC
+  - 
 
 * * *
 
