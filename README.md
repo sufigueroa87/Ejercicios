@@ -877,14 +877,196 @@ public class Vehiculo {
   <img src="https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/61.%20Excepciones%20%C2%B7%20Ejercicio%200004%20%C2%B7%20b.png">
 </p>
 
-- [61\. Excepciones · Ejercicio 0005]() INS Esteve Terradas i Illa
+- [61\. Excepciones · Ejercicio 0005]()
+  
+- [61\. Colecciones · List · Ejercicio 0001]() IOC
+  - Dada la clase Barco, completar el código de la clase Puerto según las indicaciones de los comentarios "TODO".
+
+```Java
+	public class Barco {
+
+		private String matricula;
+		private String nombre;
+		private float eslora;
+		private int cabinas;
+
+		public Barco(String matricula, String nombre, float eslora, int cabinas) {
+		    this.matricula=matricula;
+		    this.nombre = nombre;
+		    this.eslora = eslora;
+		    this.cabinas = cabinas;
+		}
+
+		public String getMatricula() {
+		    return matricula;
+		}
+
+		public void setMatricula(String matricula) {
+		    this.matricula = matricula;
+		}
+
+		public String getNombre() {
+		    return nombre;
+		}
+
+		public void setNombre(String nombre) {
+		    this.nombre = nombre;
+		}
+
+		public float getEslora() {
+		    return eslora;
+		}
+
+		public void setEslora(float eslora) {
+		    this.eslora = eslora;
+		}
+
+		public int getCabinas() {
+		    return cabinas;
+		}
+
+		public void setCabinas(int cabinas) {
+		    this.cabinas = cabinas;
+		}
+
+		public String toString() {
+		    return "Nom=" + nombre + "\nEslora=" + eslora + "\nCabines=" + cabinas;
+		}
+
+		public boolean estaMatriculado(){
+
+		    if (matricula == null){ //No está matriculado
+		        return false;
+		    }else{
+		        return true;
+		    }
+		}
+	}
+
+```
+```Java
+	public class Puerto {
+
+		private String nombre;
+
+		/*TODO
+		Tenemos que crear un atributo llamado puerto que sea un List que implementaremos mediante un ArrayList
+		para guardar barcos.
+		*/
+
+
+		public Puerto(String nom) {
+		    this.nombre = nom;
+		}
+
+		public void anadirBarco(Barco barco){
+		    /*TODO
+		      Tenemos que añadir al final del atributo creado el barco pasado por parámetro.*/
+		}
+
+		public void eliminarBarco(Barco barco){
+		    /*TODO
+		     Tenemos que eliminar el barco pasado por parámetro si este está en el puerto.*/
+		}
+
+		public void mostrarMatricula(){
+		    /*TODO
+		     Tenemos que imprimir por pantalla la matrícula de los barcos que hay en el puerto con una eslora de más de
+		     20m.
+		    */
+		}
+	}
+```
+
+- [61\. Colecciones · List · Ejercicio 0002]() IOC
+  - Dada la clase Atraccion, completar el código de la clase ParqueAtracciones según las indicaciones TODO.
+
+```Java
+	public class Atraccion {
+
+		//atributos
+		private String nombre;
+		private String zona;
+		private boolean tieneAccesoMR;
+
+		//constructor
+		public Atraccion(String nombre, String zona, boolean tieneAccesoMR) {
+		    this.nombre = nombre;
+		    this.zona = zona;
+		    this.tieneAccesoMR = tieneAccesoMR;
+		}
+
+		//getters
+		public String getNombre() {
+		    return nombre;
+		}
+
+		public String getZona() {
+		    return zona;
+		}
+
+		public boolean isTieneAccesoMR() {
+		    return tieneAccesoMR;
+		}
+
+		//setters
+		public void setNombre(String nombre) {
+		    this.nombre = nombre;
+		}
+
+		public void setZona(String zona) {
+		    this.zona = zona;
+		}
+
+		public void setTieneAccesoMR(boolean tieneAccesoMR) {
+		    this.tieneAccesoMR = tieneAccesoMR;
+		}
+
+	}
+```
+
+```Java
+	public class ParqueAtracciones {
+
+		private String nombre;
+		private String direccion;
+		/*
+		TODO
+		Tenemos que crear un atributo llamado parqueAtracciones que sea un List que tenemos que implementar mediante
+		un ArrayList para guardar las atracciones del parque de atracciones.
+		 */
+
+		public ParqueAtracciones(String nombre, String direccion) {
+		    this.nombre = nombre;
+		    this.direccion = direccion;
+		}
+
+		public void anadirAtraccion(Atraccion atraccion){
+		    /*
+		    TODO
+		    Tenemos que añadir al final del atributo creado la atracción pasada por parámetro.
+		     */
+		}
+
+		public void eliminarAtraccion(Atraccion atraccion){
+		    /*
+		    TODO
+		    Tenemos que eliminar la atracción pasada por parámetro si esta se encuentra en el parque de atracciones.
+		     */
+		}
+
+		public void modificarNombreAtraccion(Atraccion atraccion, String nombre){
+		    /*
+		    TODO
+		    Tenemos que modificar el nombre de la atracción pasada como primer parámetro por el nombre
+		    pasado como segundo parámetro, si esta se encuentra en el parque de atracciones.
+		     */
+		}
+	}
+```
+
+- [61\. Colecciones · List · Ejercicio 0003]() IOC
   - 
-
-- [61\. Colecciones · List · Ejercicio 0001]()
-
-- [61\. Colecciones · List · Ejercicio 0002]()
-
-- [61\. Colecciones · List · Ejercicio 0003]()
 
 * * *
 
@@ -893,10 +1075,162 @@ public class Vehiculo {
 ### 62. Interfaces gráficas de usuario. Swing.
 
 - [62\. Swing · Ejercicio 0001]()
+  - Completa el código de la clase FormAccesoMR según los comentarios "TODO".
 
-- [62\. Swing · Ejercicio 0002]()
+```Java
+	import java.awt.GridLayout;
+	import java.awt.event.ActionEvent;
+	import java.awt.event.ActionListener;
+	import javax.swing.JButton;
+	import javax.swing.JFrame;
+	import javax.swing.JLabel;
+
+	public class FormAccesoMR implements ActionListener {
+
+		private final int ANCHO = 400;
+		private final int ALTURA = 200;
+
+		private JFrame ventana;
+		private JLabel pregunta;
+		private JButton si;
+		private JButton no;
+		private boolean respuesta;
+
+		public FormAccesoMR(){
+		    /*
+		    TODO
+		    Tenemos que crear una ventana como la que se muestra en la imagen, teniendo en cuenta:
+		    ·) El atributo etiqueta y los botones tienen que estar incrustados en la ventana directamente.
+		    ·) La etiqueta tiene que mostrar la pregunta "La atracción tiene acceso de movilidad reducida?"
+		    ·) El nombre del botón Sí tiene que ser "Sí" y el del botón No tiene que ser "No".
+		    ·) El nombre de la ventana tiene que ser "Acceso de movilidad reducida" y sus medidas la de los atributos
+		    constantes ANCHO y ALTO.
+		    ·) Tenemos que respetar el formato de la ventana de la imagen.
+		     */
+		}
+
+		public void anadirListenerBotones(){
+		    /*
+		    TODO
+		    Tenemos que añadir el listener a los botones.
+		     */
+		}
+
+		public void actionPerformed(ActionEvent evento) {
+		    /*
+		    TODO
+		    Cuando apretamos el botón "Sí" asignaremos al atributo respuesta verdadero, en caso contrario, falso.
+		     */
+		}
+	}
+```
+
+![62. Swing · Ejercicio 0001](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/62.%20Swing%20%C2%B7%20Ejercicio%200001.jpg)
+
+- [62\. Swing · Ejercicio 0002]() IOC
+  - Dada la clase Barco, completa el código de la clase FormMatricula según las indicaciones de los comentarios "TODO".
+
+```Java
+	public class Barco {
+
+		private String matricula;
+		private String nombre;
+		private float eslora;
+		private int cabinas;
+
+		public Barco(String matricula, String nombre, float eslora, int cabinas) {
+		    this.matricula=matricula;
+		    this.nombre = nombre;
+		    this.eslora = eslora;
+		    this.cabinas = cabinas;
+		}
+
+		public String getMatricula() {
+		    return matricula;
+		}
+
+		public void setMatricula(String matricula) {
+		    this.matricula = matricula;
+		}
+
+		public String getNombre() {
+		    return nombre;
+		}
+
+		public void setNombre(String nombre) {
+		    this.nombre = nombre;
+		}
+
+		public float getEslora() {
+		    return eslora;
+		}
+
+		public void setEslora(float eslora) {
+		    this.eslora = eslora;
+		}
+
+		public int getCabinas() {
+		    return cabinas;
+		}
+
+		public void setCabinas(int cabinas) {
+		    this.cabinas = cabinas;
+		}
+
+		public String toString() {
+		    return "Nom=" + nombre + "\nEslora=" + eslora + "\nCabines=" + cabinas;
+		}
+
+	}
+```
+
+```Java
+	import java.awt.GridLayout;
+	import java.awt.event.ActionEvent;
+	import java.awt.event.ActionListener;
+	import javax.swing.*;
+
+	public class FormMatricula implements ActionListener {
+
+		private final int ANCHO = 250;
+		private final int ALTO = 200;
+		private JFrame ventana;
+		private JLabel lMatricula;
+		private JTextField tMatricula;
+		private JButton matricular;
+		public FormMatricula(){
+		    /*
+		    Tenemos que crear una ventana teniendo en cuenta:
+		    ·) EL atributo etiqueta, campo de texto y botón tienen que estar incrustados en la ventana directamente.
+		    ·) El nombre del botón tiene que ser "Matricular".
+		    ·) El nombre de la ventana tiene que ser "Matriculación barco" y sus medidas la de los atributos
+		    constantes ALTO y ANCHO.
+		    ·) El campo de texto cuando abrimos la ventana mostrará "7º-PM-1-01-11" que será una matrícula de ejemplo.
+		     */
+		}
+
+		public void añadirListenerBotones(){
+		    /*
+		    TODO
+		    Tenemos que añadir el listener al botón.
+		     */
+		}
+
+		public void actionPerformed(ActionEvent evento) {
+		    Barco nuevoBarco = new Barco(null, "Barco", 13.5F, 4);
+		    /*
+		    TODO
+		    Cuando apretemos el botón matricular del formulario, tenemos que asignar al atributo matrícula
+		    del nuevo barco el valor introducido por el usuario mediante el formulario.
+		     */
+		}
+
+	}
+```
 
 - [62\. Swing · Ejercicio 0003]()
+
+![62. Swing · Ejercicio 0003](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/62.%20Swing%20%C2%B7%20Ejercicio%200003.jpg)
 
 - [62\. Swing · Ejercicio 0004]()
 
