@@ -17,7 +17,6 @@ public class Barco {
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -25,7 +24,6 @@ public class Barco {
     public float getEslora() {
         return eslora;
     }
-
     public void setEslora(float eslora) {
         this.eslora = eslora;
     }
@@ -33,10 +31,12 @@ public class Barco {
     public int getCabinas() {
         return cabinas;
     }
-
     public void setCabinas(int cabinas) {
         this.cabinas = cabinas;
     }
+
+    public String getMatricula() { return matricula;}
+    public void setMatricula(String matricula) {this.matricula = matricula;}
 
     public String toString() {
         return "Nombre = " + nombre + "\nEslora = " + eslora + "\nCabinas = " + cabinas;
@@ -63,7 +63,7 @@ public class Barco {
      */
     public static void comprovarMatricula(Barco barco) throws ExcepcionBarco {
 
-        if (!barco.estaMatriculado()){
+        if (!(barco.estaMatriculado())){
             throw new ExcepcionBarco("0");
         } else {
             throw new ExcepcionBarco("default");
