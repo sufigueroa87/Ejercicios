@@ -683,10 +683,11 @@ public class Vehiculo {
 
 ### 61. Clases fundamentales. Exceptions. Colecciones. List. Iterator. Comparable. Comparator.
 
-- [61\. Excepciones · Ejercicio 0001]() IOC
+- [61\. Excepciones · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/61.%20Excepciones%20%C2%B7%20Ejercicio%200001) IOC
   - En el método comprovarMatricula(Barco barco), tenemos que comprovar si el barco pasado por parámetro está matriculado o no con el método adecuado de esta clase.
   - En los 2 casos tenemos que lanzar una excepción de tipo ExcepcionBarco con el código pertinente para después capturar la excepción producida por el barco pasado por parámetro.
-  - Cuando capturemos la excepción, se tiene que imprimir por pantalla el mensaje correspondiente al código de la excepción definido en la clase ExcepcionBarco.
+  - La excepción se enviará hasta el main, donde será capturada. Al ser capturada, se mostrará el mensaje específico.
+  
 ```Java
 	public class ExcepcionBarco extends Exception {
 		private String codigoExcepcion;
@@ -709,18 +710,18 @@ public class Vehiculo {
 	}
 ```
 ```Java
-	public class Barco{
-	   
+	public class Barco {
+
 		private String matricula;
 		private String nombre;
 		private float eslora; //largada del barco
 		private int cabinas; //Total de cabines
 
-		public Vaixell(String matricula, String nombre, float eslora, int cabinas) {
+		public Barco(String matricula, String nombre, float eslora, int cabinas) {
 		    this.matricula=matricula;
 		    this.nombre = nombre;
 		    this.eslora = eslora;
-		    this.cabines = cabinas;
+		    this.cabinas = cabinas;
 		}
 
 		public String getNombre() {
@@ -745,33 +746,33 @@ public class Vehiculo {
 
 		public void setCabinas(int cabinas) {
 		    this.cabinas = cabinas;
-		}   
+		}
 
 		public String toString() {
 		    return "Nombre=" + nombre + "\nEslora=" + eslora + "\nCabinas=" + cabinas;
 		}
-		
+
 		public boolean estaMatriculado(){
-		    
-		   if (matricula == null){ //No está matriculado
-		       return false; 
-		   }else{
-		       return true;
-		   }
-		   
+
+		    if (matricula == null){ //No está matriculado
+		        return false;
+		    }else{
+		        return true;
+		    }
+
 		}
-		
+
 		//TODO
 		public static void comprovarMatricula(Barco barco) throws ExcepcionBarco {
 
-		} 
+		}
 	}
 ```
 
-- [61\. Excepciones · Ejercicio 0002]() IOC
+- [61\. Excepciones · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/61.%20Excepciones%20%C2%B7%20Ejercicio%200002) IOC
   - En el método tieneAccesoMR() hay que comprovar si la atracción que llama a este método tiene acceso para personas con movilidad reducida o no.
   - En los dos casos tenemos que lanzar una excepción de tipo ExcepcionAtraccion con lo pertinente para después capturar la excepción producida.
-  - Cuando capturemos la excepción, se tiene que imprimir por pantalla el mensaje correspondiente al código definido en la clase ExcepcionAtraccion.
+  - La excepción se enviará hasta el main, donde será capturada. Al ser capturada, se mostrará el mensaje específico.
 ```Java
 	public class ExcepcionAtraccion extends Exception {
 		private String codigoExcepcion;
@@ -831,7 +832,7 @@ public class Vehiculo {
 		}
 		
 		//TODO
-		public static void tieneAccesoMR() throws ExcepcionAtraccion {
+		public void tieneAccesoMR() throws ExcepcionAtraccion {
 			
 		} 
 	}
