@@ -581,7 +581,7 @@ public class Vehiculo {
     - b) La información del producto más antiguo.
     - c) Todos los productos nuevos que sean muebles y que tengan un precio superior a 200 euros.
    
-- [60\. Herencia · Ejercicio 0010]() IOC
+- [60\. Herencia · Ejercicio 0010](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200010) IOC
   - Crea una jerarquía implementando la subclase Fruta.
   - La subclase Fruta hereda de la superclase Producto.
   - La clase Fruta tiene un atributo propio llamado temporada de tipo String, que incica en qué temporada se comercializa esta fruta:
@@ -632,13 +632,12 @@ public class Vehiculo {
 		this.precio = precio;
 	    }
 
-	    //toString()
-	    @Override
-	    public void toString() {
-		System.out.println("Nombre: " + nombre);
-		System.out.println("Sección: " + seccion);
-		System.out.println("Precio: " + precio);
-	    }
+		//toString()
+		public void imprimirProducto() {
+		    System.out.println("Nombre: " + nombre);
+		    System.out.println("Sección: " + seccion);
+		    System.out.println("Precio: " + precio);
+		}
 	}
 ```
 
@@ -668,8 +667,15 @@ public class Vehiculo {
 	}
 ```
 
-- [60\. Interfaces · Ejercicio 0003]() IOC
-  - 
+- [60\. Interfaces · Ejercicio 0003](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Interfaces%20%C2%B7%20Ejercicio%200003) IOC
+  - Implementa la interfaz Oferta en la clase Producto, teniendo en cuenta que el método aplicarDescuento(double descuento) tiene que modificar el precio del producto que llama al método, aplicándole el descuento pasado por parámetro.
+  - Puedes obtener la clase Producto [aquí](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200010).
+  
+```Java
+	public interface Oferta {
+    	public void aplicarDescuento(double descuento);
+	}
+```
 
 * * *
 
