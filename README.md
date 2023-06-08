@@ -249,7 +249,7 @@
 
 ### 60. Creación de aplicaciones escalables. Encapsulación. Polimorfismo. Herencia. Interfaces.
 
-- [60\. Herencia · Ejercicio 0001]() IOC
+- [60\. Herencia · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200001) IOC
   - Tenemos la siguiente clase Velero.
   - El retorno del método toString son los valores separados por comas de todos los atributos del objeto de tipo velero que llama al método.
   - Tenemos que implementar la superclase abstracta Barco de la que hereda la clase Velero.
@@ -278,7 +278,7 @@
 	}
 ```
 
-- [60\. Herencia · Ejercicio 0002]() IOC
+- [60\. Herencia · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200002) IOC
   - Tenemos la siguiente clase Adulto.
   - Esta clase está definida por:
     - Su nombre.
@@ -510,7 +510,7 @@ public class Vehiculo {
     - Rectángulo: ancho y altura
     - Círculo: radio
 
-- [60\. Herencia · Ejercicio 0007]() INS Esteve Terradas i Illa
+- [60\. Herencia · Ejercicio 0007](https://github.com/sufigueroa87/Ejercicios/tree/main/60.%20Herencia%20%C2%B7%20Ejercicio%200007) INS Esteve Terradas i Illa
   - Nos piden hacer un programa que gestione empleados.
   - Los empleados se definen por tener:
     - Nombre
