@@ -1074,7 +1074,7 @@ public class Vehiculo {
 
 ### 62. Interfaces gráficas de usuario. Swing.
 
-- [62\. Swing · Ejercicio 0001]()
+- [62\. Swing · Ejercicio 0001](https://github.com/sufigueroa87/Ejercicios/tree/main/62.%20Swing%20%C2%B7%20Ejercicio%200001)
   - Completa el código de la clase FormAccesoMR según los comentarios "TODO".
 
 ```Java
@@ -1127,7 +1127,7 @@ public class Vehiculo {
 
 ![62. Swing · Ejercicio 0001](https://raw.githubusercontent.com/sufigueroa87/Ejercicios/main/Im%C3%A1genes/62.%20Swing%20%C2%B7%20Ejercicio%200001.jpg)
 
-- [62\. Swing · Ejercicio 0002]() IOC
+- [62\. Swing · Ejercicio 0002](https://github.com/sufigueroa87/Ejercicios/tree/main/62.%20Swing%20%C2%B7%20Ejercicio%200002) IOC
   - Dada la clase Barco, completa el código de la clase FormMatricula según las indicaciones de los comentarios "TODO".
 
 ```Java
